@@ -2,13 +2,16 @@ import React from 'react';
 
 import './App.css';
 import { Grid, Image } from 'semantic-ui-react'
-//수정가능한지 확인중
-//푸쉬확인
+import ProductListView from './view/ProductListView';
+
 
 function App() {
   return (
     <Grid columns={1}>
     <Grid.Row>
+      <Grid.Column>
+
+      </Grid.Column>
       <Grid.Column>
         <Image src='/images/wireframe/paragraph.png' />
       </Grid.Column>
