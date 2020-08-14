@@ -8,56 +8,54 @@ import ProductDetail from './view/ProductDetail';
 
 function App() {
   return (
-    <Grid divided='vertically'>
-      <Grid.Row columns={1}>
-        <Grid.Column>
-          <Image src='/images/wireframe/paragraph.png' />
-        </Grid.Column>
-        <Grid.Column>
-          <Image src='/images/wireframe/paragraph.png' />
-        </Grid.Column>
-        <Grid.Column>
-          <Image src='/images/wireframe/paragraph.png' />
-        </Grid.Column>
-      </Grid.Row>
+    <Grid columns={1}>
+    <Grid.Row>
+      <Grid.Column>
+        <Image src='/images/wireframe/paragraph.png' />
+      </Grid.Column>
+      <Grid.Column>
+        <Image src='/images/wireframe/paragraph.png' />
+      </Grid.Column>
+      <Grid.Column>
+        <Image src='/images/wireframe/paragraph.png' />
+      </Grid.Column>
+    </Grid.Row>
 
-      <Grid.Row columns={1}>
-        <Grid.Column>
-          <Image src='/images/wireframe/paragraph.png' />
-        </Grid.Column>
-        <Grid.Column>
-          <Image src='/images/wireframe/paragraph.png' />
-        </Grid.Column>
-        <Grid.Column>
-          <Image src='/images/wireframe/paragraph.png' />
-        </Grid.Column>
-      </Grid.Row>
-      
-      <Grid.Row columns={1}>
-        <Grid.Column>
-          <Image src='/images/wireframe/paragraph.png' />
-        </Grid.Column>
-        <Grid.Column>
-          <Image src='/images/wireframe/paragraph.png' />
-        </Grid.Column>
-        <Grid.Column>
-          <Image src='/images/wireframe/paragraph.png' />
-        </Grid.Column>
-      </Grid.Row>
+    <Grid.Row>
+      <Grid.Column>
+        <Image src='/images/wireframe/paragraph.png' />
+      </Grid.Column>
+      <Grid.Column>
+        <Image src='/images/wireframe/paragraph.png' />
+      </Grid.Column>
+      <Grid.Column>
+        <Image src='/images/wireframe/paragraph.png' />
+      </Grid.Column>
+    </Grid.Row>
 
-      <Grid.Row columns={1}>
-        <Grid.Column>
-          <Image src='/images/wireframe/paragraph.png' />
-        </Grid.Column>
-        <Grid.Column>
-          <Image src='/images/wireframe/paragraph.png' />
-        </Grid.Column>
-        <Grid.Column>
-          <Image src='/images/wireframe/paragraph.png' />
-        </Grid.Column>
-      </Grid.Row>
-      
-    </Grid>
+    <Grid.Row>
+      <Grid.Column>
+        <Image src='/images/wireframe/paragraph.png' />
+      </Grid.Column>
+      <Grid.Column>
+        <Image src='/images/wireframe/paragraph.png' />
+      </Grid.Column>
+      <Grid.Column>
+        <Image src='/images/wireframe/paragraph.png' />
+      </Grid.Column>
+    </Grid.Row>
+    <Grid.Row>
+      <Grid.Column>
+        <Image src='/images/wireframe/paragraph.png' />
+      </Grid.Column>
+      <Grid.Column>
+        <Image src='/images/wireframe/paragraph.png' />
+      </Grid.Column>
+      <Grid.Column>
+        <Image src='/images/wireframe/paragraph.png' />
+      </Grid.Column>
+    </Grid.Row>
+  </Grid>
   );
 }
 

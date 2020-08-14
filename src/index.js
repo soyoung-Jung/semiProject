@@ -4,12 +4,12 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from "mobx-react";
-import 'semantic-ui-css/semantic.min.css'
-import IkeaStore from './store/IkeaStore';
-
+import 'semantic-ui-css/semantic.min.css';
+import ProductStore from "./store/ProductStore";
+import UserStore from "./store/UserStore";
 
 ReactDOM.render(
-  <Provider IkeaStore = {IkeaStore}>
+  <Provider ProductStore = {ProductStore} UserStore = {UserStore}>
     <App />
   </Provider>,
   document.getElementById('root')
