@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './App.css';
+import './App.css';//hi
 import { Grid, Image } from 'semantic-ui-react'
 <<<<<<< HEAD
 import ProductListView from './view/ProductListView';
