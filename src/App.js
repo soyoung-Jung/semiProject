@@ -3,6 +3,7 @@ import React from 'react';
 import './App.css';
 import { Grid, Image } from 'semantic-ui-react'
 //수정가능한지 확인중
+//푸쉬확인
 
 function App() {
   return (
