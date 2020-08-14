@@ -29,6 +29,7 @@ function App() {
           <Image src='/images/wireframe/paragraph.png' />
         </Grid.Column>
       </Grid.Row>
+      
       <Grid.Row columns={1}>
         <Grid.Column>
           <Image src='/images/wireframe/paragraph.png' />
@@ -40,6 +41,19 @@ function App() {
           <Image src='/images/wireframe/paragraph.png' />
         </Grid.Column>
       </Grid.Row>
+
+      <Grid.Row columns={1}>
+        <Grid.Column>
+          <Image src='/images/wireframe/paragraph.png' />
+        </Grid.Column>
+        <Grid.Column>
+          <Image src='/images/wireframe/paragraph.png' />
+        </Grid.Column>
+        <Grid.Column>
+          <Image src='/images/wireframe/paragraph.png' />
+        </Grid.Column>
+      </Grid.Row>
+      
     </Grid>
   );
 }
