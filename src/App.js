@@ -9,7 +9,7 @@ import ProductDetail from './view/ProductDetail';
 
 function App() {
   return (
-    <>//ekkef
+    <>
     <Grid divided='vertically'>
       <Grid.Row centered
  columns={1}>
