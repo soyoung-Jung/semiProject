@@ -50,7 +50,7 @@ class UserStore{
     
     @action 
     modifyTodo(selectedProduct) {
-        //상품리스트에서 선택된 상품의 아이디와 같은 상품객체 수정
+        //회원리스트에서 선택된 회원의 아이디와 같은 회원객체 수정
         this.users = this.users.map((todo) =>
         todo.id === selectedProduct.id ? selectedProduct : todo
         );
@@ -59,7 +59,7 @@ class UserStore{
     
     @action
     selectTodo(selectedId) {
-        //상품리스트에서 id가 같은 상품 객체 리턴
+        //회원리스트에서 id가 같은 회원 객체를 user로 등록
         this.user = this.users.find((user) => user.id === selectedId);
     }
 
