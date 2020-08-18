@@ -3,8 +3,8 @@ import { Grid } from "semantic-ui-react";
 import HeaderView from "./view/HeaderView";
 import FooterView from "./view/FooterView";
 import PromotionView from "./view/PromotionView";
-import MainProductListContainer from "./container/mainpage/MainProductListContainer";
 import { observer, inject } from "mobx-react";
+import MainProductListContainer from "./container/mainpage/MainProductListContainer";
 
 @observer
 @inject("ProductStore")
@@ -52,40 +52,6 @@ class App extends Component {
   }
 }
 
-            <Grid.Row centered columns={1}>
-              <MainProductListView />
-            </Grid.Row>
-          </>
-        )}
-        {activeItem === "detail" && (
-          <>
-            <Grid.Row centered columns={1}>
-              <productDetailContainer />
-            </Grid.Row>
-          </>
-        )}
-        {activeItem === "cart" && (
-          <>
-            <Grid.Row centered columns={1}>
-              <CartListView />
-            </Grid.Row>
-          </>
-        )}
-        <Grid.Row centered columns={1}>
-          <FooterView />
-        </Grid.Row>
-      </Grid>
-    );
-  }
-}
-
-
-
-
-//       <Grid.Row centered
-//       columns={1}>
-//         <LoginView />
-//       </Grid.Row>
-
+     
 
 export default App;
