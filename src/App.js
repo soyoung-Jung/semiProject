@@ -6,14 +6,15 @@ import PromotionView from "./view/PromotionView";
 import LoginView from "./view/LoginView";
 import { observer, inject } from "mobx-react";
 import ProductStore from "./store/ProductStore";
-
+import ProductDetail from "./view/ProductDetail";
+import ProductDetailContainer from "./container/productdetailpage/ProductDetailContainer";
 @observer
 @inject("ProductStore")
 class App extends Component {
   render() {
     let activeItem = this.props.ProductStore.activeItem;
-    console.log(activeItem);
-    console.log(this.props.ProductStore.mainProducts);
+    // console.log(activeItem);
+    // console.log(this.props.ProductStore.mainProducts);
     return (
       <Grid divided="vertically">
         <Grid.Row centered columns={1}>
@@ -22,11 +23,12 @@ class App extends Component {
         {activeItem === "home" && (
           <>
             <Grid.Row centered columns={1}>
-              <PromotionView />
+              {/* <PromotionView />
             </Grid.Row>
 
             <Grid.Row centered columns={1}>
-              <LoginView />
+              <LoginView /> */}
+              <ProductDetailContainer/>
             </Grid.Row>
           </>
         )}

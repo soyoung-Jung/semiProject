@@ -6,7 +6,7 @@ class HeaderView extends Component {
     
     render() {
         return (
-            <Form classNmae="form">
+            <Form className="form">
                 <Menu fixed="top"><Button icon size='huge'><Icon name='bars' /></Button></Menu>
               
                 <Icon size="huge" name="bath"/>

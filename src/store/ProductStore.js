@@ -2,6 +2,9 @@ import { observable, computed, action } from "mobx";
 import generateId from "../IDGenerator";
 import Accs from "../jsonData/Accs";
 import Beds from "../jsonData/Beds";
+import Sofas from "../jsonData/Sofas";
+import Tables from "../jsonData/Tables";
+
 
 class ProductStore {
   @observable
@@ -18,7 +21,7 @@ class ProductStore {
 
   //선택된 상품
   @observable
-  selectedProduct = {};
+  selectedProduct = Tables[0];
   //프로모션에서 보여질 상품 이미지 목록
   @observable
   promotionImgs = [];
