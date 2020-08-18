@@ -9,9 +9,11 @@ import MainProductListView from '../../view/MainProductListView';
 class MainProductListContainer extends Component {
 
     onSelectProduct = (id) => {
-      this.props.ProductStore.selectProduct(id)
-      
+      this.props.ProductStore.selectProduct(id);
+      this.props.ProductStore.switchItem("detail");
     }
+    
+
 
     render() {
         const {mainProducts} = this.props.ProductStore;

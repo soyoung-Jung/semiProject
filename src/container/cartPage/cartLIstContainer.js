@@ -7,10 +7,21 @@ import {inject, observer} from 'mobx-react';
 @observer
 
 class CartListContainer extends Component {
+    onChangedChecked = () => {
+        this.props.ProductStore.changeChecked();
+    }
+    onRemoveProduct = (selectedId) => {
+        this.props.ProductStore.removeProduct(selectedId);
+    }
     render() {
         const {productsInCart, allProductPriceInCart} = this.props.ProductStore;
         return (
-            <CartListView products={productsInCart} price={allProductPriceInCart}/>
+            <CartListView 
+            products={productsInCart}
+            price={allProductPriceInCart}
+            onChangedChecked={this.onChangedChecked}
+            onRemoveProduct={this.onRemove}
+             />
         );
     }
 }

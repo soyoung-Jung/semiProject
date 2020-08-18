@@ -102,6 +102,12 @@ class ProductStore {
     );
     return this.selectedProduct;
   }
+
+  @action
+  changeChecked() {
+    this.productsInCart.deleteCheck = !this.productsInCart.deleteCheck;
+    console.log(this.productsInCart.deleteCheck)
+  }
 }
 
 export default new ProductStore();
