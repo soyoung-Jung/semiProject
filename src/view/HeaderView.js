@@ -8,7 +8,7 @@ const menuStyle={
     display:'flex',
     justifyContent:'center',
     background: 'rgba(155, 155, 155, 0.2)',
-    padding: 25,
+    padding: 20,
 
 }
 
