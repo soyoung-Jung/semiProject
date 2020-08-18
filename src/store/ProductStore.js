@@ -1,6 +1,8 @@
 import { observable, computed, action } from "mobx";
 import Accs from "../jsonData/Accs";
 import Beds from "../jsonData/Beds";
+import Sofas from "../jsonData/Sofas";
+import Tables from "../jsonData/Tables";
 
 class ProductStore {
   @observable
@@ -21,7 +23,7 @@ class ProductStore {
 
   //선택된 상품
   @observable
-  selectedProduct = {};
+  selectedProduct = Tables[0];
   //프로모션에서 보여질 상품 이미지 목록
   @observable
   promotionImgs = [];
@@ -31,8 +33,8 @@ class ProductStore {
   productsInCart = [
     {
       product: Beds[0],
-      count: 1,
-      deleteCheck: true, //체크 되었는지 여부
+      count: 0,
+      check: false, //체크 되었는지 여부
     },
   ];
 
@@ -41,7 +43,7 @@ class ProductStore {
   get allProductPriceInCart() {
     let sumPrice = 0;
     this.productsInCart.forEach((productInCart) => {
-      if (productInCart.deletecheck) {
+      if (productInCart.check) {
         sumPrice += productInCart.product.price * productInCart.count;
       }
     });
@@ -68,10 +70,15 @@ class ProductStore {
     this.productsInCart.push({
       product: product,
       count: count,
-      deleteCheck: false,
+      check: false,
     });
   }
+  //체크된 상품 카트에서 제거
 
+  @action
+  removeProductInCart() {
+    this.productsInCart.filter((product) => !product.check);
+  }
   //상품추가
   @action
   addProduct(product) {
@@ -102,6 +109,12 @@ class ProductStore {
       (product) => product.id === selectedId
     );
     return this.selectedProduct;
+  }
+
+  @action
+  changeChecked() {
+    this.productsInCart.check = !this.productsInCart.check;
+    console.log(this.productsInCart.check);
   }
 }
 

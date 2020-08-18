@@ -3,8 +3,11 @@ import {Button, Table, Icon, Checkbox, Image} from 'semantic-ui-react';
 // import product1 from '../productImages/product1.png'
 
 class CartListView extends Component {
+
+
+
     render() {
-        const{products, price} = this.props;
+        const{products, price, onChangedChecked} = this.props;
         return (            
         <div>
             <h1>Cart</h1>
@@ -29,7 +32,7 @@ class CartListView extends Component {
                 return(
                 <Table.Row key={product.product.id}>
                     <Table.Cell>
-                        <Checkbox/>
+                        <Checkbox onChange={() => onChangedChecked()}/>
                     </Table.Cell>
                     <Table.Cell>
                         <Image style={{'fontSize':30}} avatar src={product.product.imgUrl} />

@@ -4,13 +4,17 @@ import bed from '../image/bed.png';
 
 class ProductDetail extends Component {
     render() {
+        const {
+            product,
+            onAddProductInCart
+        } = this.props;
+        console.log(product)
         return (
             <Grid textAlign='center'>
                 <Divider hidden />
                 <Grid.Row>
                     <Grid.Column width={7}>
-                        <img src={bed} />
-                        <br/>
+                        <img src={product.imgUrl} />
                         <Image avatar src={bed} size='tiny'/>
                         <Image avatar src={bed} size='tiny'/>
                         <Image avatar src={bed} size='tiny'/>
@@ -20,10 +24,12 @@ class ProductDetail extends Component {
                     <Grid.Column width={7}>
                         <div>
                             <br/>
-                            <h1>침대</h1>
-                            <h3>가격</h3>
                             <br/>
-                            <p>쿠션형 침대프레임, 봄스타드 블랙150x200 cm</p>
+                            <br/>
+                            <h1><strong>{product.name}</strong></h1>
+                            <h2>{product.price}</h2>
+                            <br/>
+                            <p>{product.description}</p>
                             <br/>
                         </div>
                         <Divider hidden/>
@@ -35,7 +41,7 @@ class ProductDetail extends Component {
                         <Divider hidden />
                         <div>
                             <Button primary>구매하기</Button>
-                            <Button secondary>장바구니</Button>
+                            <Button secondary onClick={onAddProductInCart}>장바구니</Button>
                         </div>
                     </Grid.Column>
                 </Grid.Row>
@@ -43,7 +49,7 @@ class ProductDetail extends Component {
                 <Grid.Row>
                     <Grid.Column width={12}>
                         <div>
-                            <p>Have a nice day!!!!Have a nice day!!!!Have a nice day!!!!Have a nice day!!!!Have a nice day!!!!Have a nice day!!!!Have a nice day!!!!Have a nice day!!!!Have a nice day!!!!Have a nice day!!!!Have a nice day!!!!Have a nice day!!!!Have a nice day!!!!Have a nice day!!!!Have a nice day!!!!Have a nice day!!!!Have a nice day!!!!Have a nice day!!!!Have a nice day!!!!Have a nice day!!!!Have a nice day!!!!Have a nice day!!!!Have a nice day!!!!Have a nice day!!!!Have a nice day!!!!Have a nice day!!!!Have a nice day!!!!Have a nice day!!!!Have a nice day!!!!Have a nice day!!!!Have a nice day!!!!Have a nice day!!!!Have a nice day!!!!Have a nice day!!!!Have a nice day!!!!Have a nice day!!!!</p>
+                            <p>{product.detail}</p>
                         </div>
                     </Grid.Column>
                 </Grid.Row>
