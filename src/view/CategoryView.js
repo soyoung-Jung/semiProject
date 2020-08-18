@@ -19,8 +19,8 @@ class CategoryView extends Component {
                         Home
                     </Menu.Item>
                     <Menu.Item as='a'>
-                        <Icon name='gamepad' />
-                        Games
+                        <Icon name='bath' />
+                        Bathroom
                     </Menu.Item>
                     <Menu.Item as='a'>
                         <Icon name='camera' />
