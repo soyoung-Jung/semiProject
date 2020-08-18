@@ -1,25 +1,89 @@
-import React from 'react';
-import { Grid } from 'semantic-ui-react'
-import HeaderView from './view/HeaderView';
-import FooterView from './view/FooterView';
-import PromotionView from './view/PromotionView';
+import React, { Component } from "react";
+import { Grid } from "semantic-ui-react";
+import HeaderView from "./view/HeaderView";
+import FooterView from "./view/FooterView";
+import PromotionView from "./view/PromotionView";
+import LoginView from "./view/LoginView";
+import { observer, inject } from "mobx-react";
+import ProductStore from "./store/ProductStore";
 
+@observer
+@inject("ProductStore")
+class App extends Component {
+  render() {
+    let activeItem = this.props.ProductStore.activeItem;
+    console.log(activeItem);
+    console.log(this.props.ProductStore.mainProducts);
+    return (
+      <Grid divided="vertically">
+        <Grid.Row centered columns={1}>
+          <HeaderView />
+        </Grid.Row>
+        {activeItem === "home" && (
+          <>
+            <Grid.Row centered columns={1}>
+              <PromotionView />
+            </Grid.Row>
 
-function App() {
-  return (
-    <Grid divided='vertically'>
-      <Grid.Row centered columns={1}>
-        <HeaderView />
-      </Grid.Row>
-      <Grid.Row centered columns={1}>
-        <PromotionView />
-      </Grid.Row>
-      <Grid.Row centered columns={1}>
-        <FooterView />
-      </Grid.Row>
+            <Grid.Row centered columns={1}>
+              <LoginView />
+            </Grid.Row>
+          </>
+        )}
+        {activeItem === "detail" && (
+          <>
+            <Grid.Row centered columns={1}>
+              <productDetailContainer />
+            </Grid.Row>
+          </>
+        )}
+        {activeItem === "cart" && (
+          <>
+            <Grid.Row centered columns={1}>
+              <PromotionView />
+            </Grid.Row>
 
-    </Grid>
-  );
+            <Grid.Row centered columns={1}>
+              <LoginView />
+            </Grid.Row>
+          </>
+        )}
+        <Grid.Row centered columns={1}>
+          <FooterView />
+        </Grid.Row>
+      </Grid>
+    );
+  }
 }
 
 export default App;
+// function App() {
+//   let activeItem = this.props.ProductStore.activeItem;
+
+//   return (
+//     <Grid divided='vertically'>
+//       <Grid.Row centered
+//       columns={1}>
+//         <HeaderView />
+//       </Grid.Row>
+
+//       <Grid.Row centered
+//       columns={1}>
+//         <PromotionView />
+//       </Grid.Row>
+
+//       <Grid.Row centered
+//       columns={1}>
+//         <LoginView />
+//       </Grid.Row>
+
+//       <Grid.Row centered
+//       columns={1}>
+//         <FooterView />
+//       </Grid.Row>
+
+//     </Grid>
+//   );
+// }
+
+// export default App;
