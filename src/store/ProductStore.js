@@ -31,7 +31,8 @@ class ProductStore {
     productsInCart = [
         {
             product: {},
-            count: 0
+            count: 0,
+            deleteCheck: false //체크 되었는지 여부
         }
     ];
 
@@ -39,8 +40,30 @@ class ProductStore {
     @computed  
     get allProductPriceInCart(){
         let sumPrice = 0;
-        this.productsInCart.forEach(product => sumPrice += product.price);
+        this.productsInCart.forEach(productInCart => {
+            if(productInCart.check){
+                sumPrice += productInCart.product.price * productInCart.count
+            }
+        });
+
         return sumPrice; 
+    }
+
+    //카트에 상품 추가
+    @action
+    addProductInCart(product, count){
+        this.productsInCart.push({
+            product: product, 
+            count: count,
+            deleteCheck: false
+        })
+    }
+
+    //카트 상품 제거
+    @action
+    deleteProductInCart(){
+        let newProductsInCar = this.productsInCart.filter(productInCart => !productInCart.deleteCheck);
+        this.productsInCart = newProductsInCar;
     }
 
     //상품추가
@@ -70,6 +93,7 @@ class ProductStore {
       this.product = this.products.find((product) => product.id === selectedId);
     }
     
+
 
 }
 
