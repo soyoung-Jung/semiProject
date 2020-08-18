@@ -3,7 +3,7 @@ import { Grid } from "semantic-ui-react";
 import HeaderView from "./view/HeaderView";
 import FooterView from "./view/FooterView";
 import PromotionView from "./view/PromotionView";
-import LoginView from "./view/LoginView";
+import ProductListView from "./view/ProductListView";
 import { observer, inject } from "mobx-react";
 import ProductStore from "./store/ProductStore";
 
@@ -24,9 +24,8 @@ class App extends Component {
             <Grid.Row centered columns={1}>
               <PromotionView />
             </Grid.Row>
-
             <Grid.Row centered columns={1}>
-              <LoginView />
+              <ProductListView />
             </Grid.Row>
           </>
         )}
@@ -43,9 +42,6 @@ class App extends Component {
               <PromotionView />
             </Grid.Row>
 
-            <Grid.Row centered columns={1}>
-              <LoginView />
-            </Grid.Row>
           </>
         )}
         <Grid.Row centered columns={1}>
