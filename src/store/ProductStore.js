@@ -5,6 +5,8 @@ import Beds from "../jsonData/Beds";
 
 class ProductStore {
 
+    @observable
+    activeItem = "home";
     // 상품목록
     @observable
     products = [{
@@ -53,10 +55,6 @@ class ProductStore {
         });
 
         return sumPrice; 
-    }
-
-    get mainProducts(){
-        let mainProducts = 
     }
 
     //카트에 상품 추가
