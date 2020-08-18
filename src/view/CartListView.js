@@ -3,7 +3,11 @@ import {Button, Table, Icon, Checkbox, Image} from 'semantic-ui-react';
 // import product1 from '../productImages/product1.png'
 
 class CartListView extends Component {
+
+
+
     render() {
+        const{products, price, onChangedChecked} = this.props;
         return (            
         <div>
             <h1>Cart</h1>
@@ -24,29 +28,21 @@ class CartListView extends Component {
             </Table.Header>
 
         <Table.Body>
-            <Table.Row>
-                <Table.Cell>
-                    <Checkbox/>
-                </Table.Cell>
-                <Table.Cell>
-                    {/* <Image style={{'font-size':30}} avatar src={product1} /> */}
-                    product name 
+            {products.map((product) => {
+                return(
+                <Table.Row key={product.product.id}>
+                    <Table.Cell>
+                        <Checkbox onChange={() => onChangedChecked()}/>
                     </Table.Cell>
-                <Table.Cell>quantity</Table.Cell>
-                <Table.Cell textAlign='right'><h2>price</h2></Table.Cell>
-            </Table.Row>
-
-            <Table.Row>
-                <Table.Cell>
-                    <Checkbox/>
-                </Table.Cell>
-                <Table.Cell>
-                    {/* <Image style={{'font-size':30}} avatar src={product1} /> */}
-                    product name
+                    <Table.Cell>
+                        <Image style={{'fontSize':30}} avatar src={product.product.imgUrl} />
+                        {product.product.name}
                     </Table.Cell>
-                <Table.Cell>quantity</Table.Cell>
-                <Table.Cell textAlign='right'><h2>price</h2></Table.Cell>
-            </Table.Row>
+                    <Table.Cell>{product.count}</Table.Cell>
+                    <Table.Cell textAlign='right'><h2>{product.product.price}</h2></Table.Cell>
+                </Table.Row>
+                )
+                })}
         </Table.Body>
 
         <Table.Footer>
@@ -54,7 +50,7 @@ class CartListView extends Component {
                 <Table.HeaderCell />
                 <Table.HeaderCell />
                 <Table.HeaderCell />
-                <Table.HeaderCell textAlign='right'>total price<h1>total price</h1></Table.HeaderCell>
+                <Table.HeaderCell textAlign='right'>total price<h1>{price}</h1></Table.HeaderCell>
             </Table.Row>
         </Table.Footer>
     </Table>
