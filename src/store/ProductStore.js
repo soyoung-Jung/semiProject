@@ -41,7 +41,7 @@ class ProductStore {
   get allProductPriceInCart() {
     let sumPrice = 0;
     this.productsInCart.forEach((productInCart) => {
-      if (productInCart.check) {
+      if (productInCart.deletecheck) {
         sumPrice += productInCart.product.price * productInCart.count;
       }
     });
@@ -59,6 +59,7 @@ class ProductStore {
   @action
   switchItem(item) {
     this.activeItem = item;
+    console.log(this.activeItem);
   }
   //카트에 상품 추가
 

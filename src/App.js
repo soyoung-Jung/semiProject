@@ -6,9 +6,8 @@ import PromotionView from "./view/PromotionView";
 import { observer, inject } from "mobx-react";
 import MainProductListContainer from "./container/mainpage/MainProductListContainer";
 
-@observer
 @inject("ProductStore")
-
+@observer
 class App extends Component {
   render() {
     let activeItem = this.props.ProductStore.activeItem;
@@ -41,7 +40,6 @@ class App extends Component {
             <Grid.Row centered columns={1}>
               <PromotionView />
             </Grid.Row>
-
           </>
         )}
         <Grid.Row centered columns={1}>
@@ -51,7 +49,5 @@ class App extends Component {
     );
   }
 }
-
-     
 
 export default App;
