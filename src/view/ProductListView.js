@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Card, Image, Icon} from 'semantic-ui-react'
-import product1 from '../productImages/product1.png'
-import product2 from '../productImages/product2.jpg'
+import { Grid, Card, Image, Icon, Rating} from 'semantic-ui-react'
 
 
 
@@ -13,16 +11,13 @@ class ProductListView extends Component {
                 <Grid.Row columns={3}>
                 <Grid.Column>
                     <Card>
-                        <Image src={product1}wrapped ui={false} />
+                        <Image wrapped ui={false} />
                         <Card.Content>
                             <Card.Header as="h1" textAlign="center">product name</Card.Header>
                             <Card.Header as="h6" >product price</Card.Header> 
                             {/* large font & no border & icon float right = css? */}
                             <Card.Meta>
-                                {/* 별점을 구현하는 방법? */}
-                                <Icon name='star'/>
-                                <Icon name='star'/>
-                                <Icon name='star'/>
+                                <Rating icon='star' defaultRating={3} maxRating={5} />  
                                 <span className='date'>product rating</span>
                             </Card.Meta>
                             <Card.Description>
@@ -31,10 +26,10 @@ class ProductListView extends Component {
                         </Card.Content>
                         <Card.Content extra>
                             <a>
-                                <Icon size="large"name='cart' />
+                            <Icon size="large"name='cart' />
                             </a>
                             <a>
-                            <Icon size = "large"name='heart outline'/>
+                            <Icon size = "large"name='like'/>
                             </a>
 
                         </Card.Content>
@@ -43,7 +38,7 @@ class ProductListView extends Component {
 
                 <Grid.Column>
                     <Card>
-                    <Image src={product2}wrapped ui={false} />
+                    <Image wrapped ui={false} />
                         <Card.Content>
                             <Card.Header>Matthew</Card.Header>
                             <Card.Meta>
