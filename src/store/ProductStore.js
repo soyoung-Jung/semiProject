@@ -54,6 +54,12 @@ class ProductStore {
   selectProduct(id) {
     this.selectProduct = this.products.find((element) => element.id === id);
   }
+
+  //activeItem 전환
+  @action
+  switchItem(item) {
+    this.activeItem = item;
+  }
   //카트에 상품 추가
   @action
   addProductInCart(product, count) {

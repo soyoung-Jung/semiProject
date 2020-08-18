@@ -5,7 +5,7 @@ import FooterView from "./view/FooterView";
 import PromotionView from "./view/PromotionView";
 import LoginView from "./view/LoginView";
 import { observer, inject } from "mobx-react";
-import ProductStore from "./store/ProductStore";
+import CartListView from "./view/CartListView";
 
 @observer
 @inject("ProductStore")
@@ -40,11 +40,7 @@ class App extends Component {
         {activeItem === "cart" && (
           <>
             <Grid.Row centered columns={1}>
-              <PromotionView />
-            </Grid.Row>
-
-            <Grid.Row centered columns={1}>
-              <LoginView />
+              <CartListView />
             </Grid.Row>
           </>
         )}
