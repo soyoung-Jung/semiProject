@@ -30,8 +30,8 @@ class ProductStore {
   productsInCart = [
     {
       product: Beds[0],
-      count: 1,
-      deleteCheck: true, //체크 되었는지 여부
+      count: 0,
+      deleteCheck: false, //체크 되었는지 여부
     },
   ];
 
@@ -40,7 +40,7 @@ class ProductStore {
   get allProductPriceInCart() {
     let sumPrice = 0;
     this.productsInCart.forEach((productInCart) => {
-      if (productInCart.check) {
+      if (productInCart.deleteCheck) {
         sumPrice += productInCart.product.price * productInCart.count;
       }
     });

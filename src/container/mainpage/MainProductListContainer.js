@@ -10,6 +10,7 @@ class MainProductListContainer extends Component {
 
     onSelectProduct = (id) => {
       this.props.ProductStore.selectProduct(id)
+      
     }
 
     render() {
