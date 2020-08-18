@@ -1,32 +1,54 @@
 import React from 'react';
 import 'semantic-ui-css/semantic.min.css';
 // import "./HeaderView.css";
-import { Button, Form, Modal, Icon, Menu, Input , Grid } from "semantic-ui-react";
+import { Button, Form, Modal, Icon, Menu, Input, Dropdown  } from "semantic-ui-react";
 
 
 const menuStyle={
     display:'flex',
     justifyContent:'center',
+    background: 'rgba(155, 155, 155, 0.2)',
+    padding: 20,
 
+}
+
+const iconStyle={
+    marginLeft: 20,
 }
 
 function HeaderView() {
     const [open, setOpen] = React.useState(false)
-    // const [visible, setVisible] = React.useState(false)
+    const options = [
+        { key: 'edit', icon: 'edit', text: 'Edit Post', value: 'edit' },
+        { key: 'delete', icon: 'delete', text: 'Remove Post', value: 'delete' },
+        { key: 'hide', icon: 'hide', text: 'Hide Post', value: 'hide' },
+      ]
+      
 
     return (
        <div >
-            <Menu fixed="top" style={menuStyle}>
+            <Menu style={menuStyle}>
                 <div >
                 {/* div로묶어야 안깨짐 */}
-                <Icon size="huge" name="bath"/>
-                <Input size='huge' icon='search' placeholder='Search...' />
+                <Button.Group>
+                    <Button>
+                    <Icon name="bars" />
+                    <Dropdown
+                    className='button icon'
+                    floating
+                    options={options}
+                    trigger={<></>}
+                    />
+                    </Button>
+                </Button.Group>
+                <Icon size="huge" name="bath" style={iconStyle}/>
+                <Input size='huge' icon='search' placeholder='Search...' style={iconStyle}/>
                 </div>
                 <Modal
                     onClose={() => setOpen(false)}
                     onOpen={() => setOpen(true)}
                     open={open}
-                    trigger={<Button icon size='huge'><Icon name= 'user circle outline'/>LOGIN</Button>}    >
+                    trigger={<Button icon size='huge' style={iconStyle}><Icon name= 'user circle outline' />LOGIN</Button>}    >
                     <Modal.Header>Login Page</Modal.Header>
                     <Modal.Content form>
                         <Form.Input

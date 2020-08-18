@@ -5,10 +5,11 @@ import Beds from "../jsonData/Beds";
 class ProductStore {
   @observable
   activeItem = "home";
+
+  // 상품목록
   @observable
   products = Accs.concat(Beds);
 
-  // 상품목록
   @observable
   AccsProducts = Accs;
 
@@ -48,13 +49,19 @@ class ProductStore {
     return sumPrice;
   }
 
+  //클릭한 상품 정보를 seletedProduct에 입력
   @action
   selectProduct(id) {
     this.selectedProduct = this.products.find((element) => element.id === id);
+  }
 
+  //activeItem 전환
+  @action
+  switchItem(item) {
+    this.activeItem = item;
   }
   //카트에 상품 추가
-  
+
   @action
   addProductInCart(product, count) {
     this.productsInCart.push({
@@ -63,7 +70,6 @@ class ProductStore {
       deleteCheck: false,
     });
   }
-
 
   //상품추가
   @action
@@ -91,8 +97,10 @@ class ProductStore {
   @action
   selectTodo(selectedId) {
     //상품리스트에서 id가 같은 상품 객체 리턴
-    this.seletedProduct = this.products.find((product) => product.id === selectedId);
-    return this.selectedProduct
+    this.seletedProduct = this.products.find(
+      (product) => product.id === selectedId
+    );
+    return this.selectedProduct;
   }
 }
 

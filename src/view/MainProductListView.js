@@ -3,11 +3,15 @@ import { Grid, Card, Image, Icon, Rating} from 'semantic-ui-react';
 
 
 class MainProductListView extends Component {
+
     render() {
         const {products, onSelectProduct} = this.props;
+        const gridStyle={
+            marginLeft: 45,
+        }
         return (
             <Grid>
-                <Grid.Row columns={4}>
+                <Grid.Row columns={4} style={gridStyle}>
                     {products.map((product) => {
                         return(
                             <Grid.Column key={product.id}>
