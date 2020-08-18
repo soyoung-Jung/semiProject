@@ -3,8 +3,8 @@ import React from 'react';
 import './App.css';//hi
 import { Grid, Image } from 'semantic-ui-react'
 import HeaderView from './view/HeaderView';
-import ProductListView from './view/ProductListView';
-import ProductDetail from './view/ProductDetail';
+import MainProductListContainer from './container/mainpage/MainProductListContainer';
+
 
 
 function App() {
@@ -15,14 +15,15 @@ function App() {
  columns={1}>
         <HeaderView />
       </Grid.Row>
+
     </Grid>
     <Grid columns={1}>
     <Grid.Row>
       <Grid.Column>
-
+        <MainProductListContainer/>
       </Grid.Column>
       <Grid.Column>
-        <Image src='/images/wireframe/paragraph.png' />
+
       </Grid.Column>
       <Grid.Column>
         <Image src='/images/wireframe/paragraph.png' />

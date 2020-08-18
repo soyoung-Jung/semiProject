@@ -180,3 +180,4 @@ const Beds = [
 	}
 
 ]
+export default Beds;

@@ -55,9 +55,6 @@ class ProductStore {
         return sumPrice; 
     }
 
-    get mainProducts(){
-        let mainProducts = 
-    }
 
     //카트에 상품 추가
     @action

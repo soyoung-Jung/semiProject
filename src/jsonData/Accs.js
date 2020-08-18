@@ -181,3 +181,5 @@ const Accs = [
 	},
 
 ]
+
+export default Accs;
