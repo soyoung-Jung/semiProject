@@ -8,6 +8,9 @@ class ProductStore {
   activeItem = "home";
   // 상품목록
   @observable
+  products = Accs.concat(Beds);
+
+  @observable
   AccsProducts = Accs;
 
   @observable
@@ -46,6 +49,7 @@ class ProductStore {
     return sumPrice;
   }
 
+  //클릭한 상품 정보를 seletedProduct에 입력
   @action
   selectProduct(id) {
     this.selectProduct = this.products.find((element) => element.id === id);
