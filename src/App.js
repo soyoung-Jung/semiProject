@@ -52,11 +52,40 @@ class App extends Component {
   }
 }
 
+            <Grid.Row centered columns={1}>
+              <MainProductListView />
+            </Grid.Row>
+          </>
+        )}
+        {activeItem === "detail" && (
+          <>
+            <Grid.Row centered columns={1}>
+              <productDetailContainer />
+            </Grid.Row>
+          </>
+        )}
+        {activeItem === "cart" && (
+          <>
+            <Grid.Row centered columns={1}>
+              <CartListView />
+            </Grid.Row>
+          </>
+        )}
+        <Grid.Row centered columns={1}>
+          <FooterView />
+        </Grid.Row>
+      </Grid>
+    );
+  }
+}
 
 
 
 
-
+//       <Grid.Row centered
+//       columns={1}>
+//         <LoginView />
+//       </Grid.Row>
 
 
 export default App;
