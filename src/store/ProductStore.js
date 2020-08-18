@@ -28,6 +28,9 @@ class ProductStore {
   @observable
   promotionImgs = [];
 
+  @observable
+  cartCount = 0;
+
   //카트에 담겨진 상품목록
   @observable
   productsInCart = [
@@ -55,6 +58,7 @@ class ProductStore {
   @action
   selectProduct(id) {
     this.selectedProduct = this.products.find((element) => element.id === id);
+    console.log(this.selectedProduct);
   }
 
   //activeItem 전환

@@ -5,14 +5,16 @@ import FooterView from "./view/FooterView";
 import PromotionView from "./view/PromotionView";
 import { observer, inject } from "mobx-react";
 import MainProductListContainer from "./container/mainpage/MainProductListContainer";
+import productDetailContainer from "./container/productdetailpage/ProductDetailContainer";
+import ProductDetailContainer from "./container/productdetailpage/ProductDetailContainer";
 
 @inject("ProductStore")
 @observer
 class App extends Component {
   render() {
     let activeItem = this.props.ProductStore.activeItem;
-    console.log(activeItem);
-    console.log(this.props.ProductStore.mainProducts);
+    // console.log(activeItem);
+    // console.log(this.props.ProductStore.mainProducts);
     return (
       <Grid divided="vertically">
         <Grid.Row centered columns={1}>
@@ -31,7 +33,7 @@ class App extends Component {
         {activeItem === "detail" && (
           <>
             <Grid.Row centered columns={1}>
-              <productDetailContainer />
+              <ProductDetailContainer />
             </Grid.Row>
           </>
         )}

@@ -12,11 +12,6 @@ class MainProductListContainer extends Component {
     this.props.ProductStore.switchItem("detail");
   };
 
-  onSelectProduct = (id) => {
-    this.props.ProductStore.selectProduct(id);
-    this.props.ProductStore.switchItem("detail");
-  };
-
   render() {
     const { mainProducts } = this.props.ProductStore;
     return (
