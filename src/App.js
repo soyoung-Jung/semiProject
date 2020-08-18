@@ -3,7 +3,7 @@ import React from 'react';
 import './App.css';//hi
 import { Grid, Image } from 'semantic-ui-react'
 import HeaderView from './view/HeaderView';
-import MainProductListContainer from './container/mainpage/MainProductListContainer';
+import CartListContainer from './container/cartPage/CartListContainer';
 
 
 
@@ -20,7 +20,7 @@ function App() {
     <Grid columns={1}>
     <Grid.Row>
       <Grid.Column>
-        <MainProductListContainer/>
+        <CartListContainer/>
       </Grid.Column>
       <Grid.Column>
 

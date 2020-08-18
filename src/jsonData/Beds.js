@@ -12,7 +12,7 @@ const Beds = [
 		id: 'b2',
 		name: 'SONGESAND 송에산드',
 		price: 309000,
-		description: '침대프레인+수납상자2,150x200 cm',
+		description: '침대프레임+수납상자2,150x200 cm',
 		detail: '단단하고 높은 침대프레임입니다. 모서리 옆선이 부드럽죠. 유행을 타지 않는 클래식한 디자인입니다. 침대 밑에 여분의 침구나 옷을 보관할 수 있는 넉넉한 수납상자가 있습니다.',
 		imgUrl: 'images/b2.png'
 	},

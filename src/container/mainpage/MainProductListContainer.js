@@ -7,11 +7,17 @@ import MainProductListView from '../../view/MainProductListView';
 @inject('ProductStore')
 @observer
 class MainProductListContainer extends Component {
-    
+
+    onSelectProduct = (id) => {
+      this.props.ProductStore.selectProduct(id)
+    }
+
     render() {
         const {mainProducts} = this.props.ProductStore;
         return (
-            <MainProductListView products={mainProducts}/>
+            <MainProductListView 
+            products={mainProducts} onSelectProduct={this.onSelectProduct}
+            />
         );
     }
 }

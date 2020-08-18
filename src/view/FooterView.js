@@ -1,21 +1,32 @@
 import React, { Component } from 'react';
 import 'semantic-ui-css/semantic.min.css';
-import { Grid} from 'semantic-ui-react'
+import { Grid, Header} from 'semantic-ui-react'
 
+//링크 만들지 결정
 class FooterView extends Component {
     render() {
         return (
-            <Grid columns={3} divided>
-                <Grid.Row>
-                    <Grid.Column> 
-                    </Grid.Column>      
-                </Grid.Row>
+            <Grid columns={3} divided >
                 <Grid.Row>
                     <Grid.Column>
+                        <Header as="h4" font-weight>고객센터</Header>
+                            <p>Tel: 010-9220-0628</p>
+                            <p>서울특별시 강남구 언주로 508, SUITE 506 </p>
+                            <p>Mail: kyungju620@gmail.com</p>
                     </Grid.Column>      
-                </Grid.Row>
-                <Grid.Row>
+                
                     <Grid.Column>
+                        <Header as="h4">IIIKEA KOREA</Header>
+                            <p>Customer Service</p>
+                            <p>My Orders</p>
+                            <p>Return Policy</p>
+                    </Grid.Column> 
+                    <Grid.Column>
+                        <Header as="h4">ABOUT IIIKEA</Header>
+                            <p>This is IIIKEA</p>
+                            <p>CAREERS</p>
+                            <p>News Room</p>
+                            <p>Help IIIKEA</p>
                     </Grid.Column>      
                 </Grid.Row>
             </Grid>
