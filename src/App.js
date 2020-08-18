@@ -23,7 +23,6 @@ function App() {
       columns={1}>
         <LoginView />
       </Grid.Row>
-
       
 
       <Grid.Row centered
