@@ -6,7 +6,7 @@ import { Grid, Header} from 'semantic-ui-react'
 class FooterView extends Component {
     render() {
         return (
-            <Grid columns={3} divided>
+            <Grid columns={3} divided >
                 <Grid.Row>
                     <Grid.Column>
                         <Header as="h4" font-weight>고객센터</Header>
