@@ -6,6 +6,7 @@ import PromotionView from "./view/PromotionView";
 import LoginView from "./view/LoginView";
 import { observer, inject } from "mobx-react";
 import CartListView from "./view/CartListView";
+import MainProductListView from "./view/MainProductListView";
 
 @observer
 @inject("ProductStore")
@@ -26,7 +27,7 @@ class App extends Component {
             </Grid.Row>
 
             <Grid.Row centered columns={1}>
-              <LoginView />
+              <MainProductListView />
             </Grid.Row>
           </>
         )}
