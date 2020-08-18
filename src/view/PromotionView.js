@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Grid, Image, Header, Button } from 'semantic-ui-react';
-import "./PromotionView.css"
+import "./PromotionView.css";
+import 'react-slideshow-image/dist/styles.css';
 
 class PromotionView extends Component {
     render() {
         return (
-            //margin-left? 옆에 짤림
             <Grid>
                 <Grid.Column width={10}>
                     <Image src='/resrc/kkj/kelvv.jpg' />
