@@ -1,5 +1,7 @@
 import { observable, computed, action } from "mobx";
 import generateId from "../IDGenerator";
+import Accs from "../jsonData/Accs";
+import Beds from "../jsonData/Beds";
 
 class ProductStore {
 
@@ -16,6 +18,10 @@ class ProductStore {
         descImgURL: "" //상품 설명 이미지
     }];
 
+    //메인페이지 상품목록
+    @observable
+    mainProducts = [Accs[0], Accs[1], Beds[0], Beds[1]];
+    
     //선택된 상품
     @observable
     selectedProduct = { 
@@ -47,6 +53,10 @@ class ProductStore {
         });
 
         return sumPrice; 
+    }
+
+    get mainProducts(){
+        let mainProducts = 
     }
 
     //카트에 상품 추가
