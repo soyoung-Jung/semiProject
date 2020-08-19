@@ -12,32 +12,30 @@ import {
   Image,
 } from "semantic-ui-react";
 
-
-const menuStyle={
-    display:'flex',
-    justifyContent:'space-around',
-    background: 'rgba(155, 155, 155, 0.2)',
-    padding: 20,
-
-}
+const menuStyle = {
+  display: "flex",
+  justifyContent: "space-around",
+  background: "rgba(155, 155, 155, 0.2)",
+  padding: 20,
+};
 const inputStyle = {
-    marginLeft: '50%',
-    width: '20%',
-
-}
+  marginLeft: "50%",
+  width: "20%",
+};
 const dropdownStyle = {
-    display: 'block',
-}
-
+  display: "block",
+};
+const iconStyle = {
+  cursor: "pointer",
+};
 function HeaderView(props) {
-    const [open, setOpen] = React.useState(false)
-    const options = [
-        { key: 'beds', icon: 'bed', text: 'Beds', value: 'edit' },
-        { key: 'delete', icon: 'home', text: 'Sofas', value: 'delete' },
-        { key: 'hide', icon: 'archive', text: 'Tables', value: 'hide' },
-        { key: 'hide', icon: 'coffee', text: 'Accs', value: 'hide' }
-      ]
-  
+  const [open, setOpen] = React.useState(false);
+  const options = [
+    { key: "beds", icon: "bed", text: "Beds", value: "edit" },
+    { key: "delete", icon: "home", text: "Sofas", value: "delete" },
+    { key: "hide", icon: "archive", text: "Tables", value: "hide" },
+    { key: "hide", icon: "coffee", text: "Accs", value: "hide" },
+  ];
 
   const [loginStatus, setLoginStatus] = useState(false);
   const { onSwitchItem, loginBool, setLoginUser } = props;
@@ -56,7 +54,6 @@ function HeaderView(props) {
             </Dropdown>
           </Button>
         </Button.Group>
-
         {/* <Icon name='angellist' size="huge" style={{iconStyle}}></Icon> */}
         <Input
           className="inputSearch"
@@ -65,18 +62,18 @@ function HeaderView(props) {
           placeholder="Search..."
           style={inputStyle}
         />
-
         <Modal
           className="loginModal"
           onClose={() => setOpen(false)}
           onOpen={() => setOpen(true)}
           open={open}
           trigger={
-              !loginStatus &&
-            <Button icon size="huge" color="black" style={{ float: "right" }}>
-              <Icon name="user circle outline" />
-              LOGIN
-            </Button>
+            !loginStatus && (
+              <Button icon size="huge" color="black" style={{ float: "right" }}>
+                <Icon name="user circle outline" />
+                LOGIN
+              </Button>
+            )
           }
         >
           <Modal.Header>Login Page</Modal.Header>
@@ -103,7 +100,7 @@ function HeaderView(props) {
             <Button color="black" onClick={() => setOpen(false)}>
               Sign Up
             </Button>
-            
+
             <Button
               content="Login"
               labelPosition="right"
@@ -121,11 +118,22 @@ function HeaderView(props) {
             />
           </Modal.Actions>
         </Modal>
-    {loginStatus && <> <Icon size='huge' name="shopping basket" /> <Icon size='huge' name="user circle" />
-          </>   } </Menu>
+        {loginStatus && (
+          <>
+            {" "}
+            <Icon
+              size="huge"
+              name="shopping basket"
+              onClick={() => onSwitchItem("cart")}
+              style={iconStyle}
+            />{" "}
+            <Icon size="huge" name="user circle" style={iconStyle} />
+          </>
+        )}{" "}
+      </Menu>
       <Image
-        src="resrc/kkj/IIIKEA.png"
-        onClick={onSwitchItem}
+        src="resrc/kkj/logo.png"
+        onClick={() => onSwitchItem("home")}
         style={{
           height: "6rem",
           position: "absolute",
