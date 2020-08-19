@@ -29,11 +29,7 @@ class ProductStore {
   promotionImgs = [];
 
   @observable
-<<<<<<< HEAD
   sumPrice = 0;
-=======
-  cartCount = 0;
->>>>>>> 74ed7b37112f05720a2402a7deed17985ff58ba1
 
   //카트에 담겨진 상품목록
   @observable
@@ -44,7 +40,6 @@ class ProductStore {
       check: false, //체크 되었는지 여부
     },
   ];
-
 
   //카트에 담긴 상품들의 총 가격
   // @computed
@@ -66,9 +61,8 @@ class ProductStore {
       if (productInCart.check) {
         this.sumPrice += productInCart.product.price * productInCart.count;
       }
-      console.log(productInCart.check)
-      
-    })
+      console.log(productInCart.check);
+    });
     console.log(this.sumPrice);
   }
 
@@ -98,7 +92,9 @@ class ProductStore {
   //체크된 상품 카트에서 제거
   @action
   removeProductInCart() {
-    this.productsInCart = this.productsInCart.filter((element) => !element.check)
+    this.productsInCart = this.productsInCart.filter(
+      (element) => !element.check
+    );
   }
   //상품추가
   @action
@@ -131,7 +127,7 @@ class ProductStore {
     );
     return this.selectedProduct;
   }
-//카트 속 제품 check바꾸기
+  //카트 속 제품 check바꾸기
   @action
   changeChecked(product) {
     product.check = !product.check;
