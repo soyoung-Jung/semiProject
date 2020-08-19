@@ -4,14 +4,16 @@ import PromotionView from '../../view/PromotionView';
 
 @inject('ProductStore')
 @observer
-class promotionContainer extends Component {
+class PromotionContainer extends Component {
     render() {
+        let  promotionImgs  = this.props.ProductStore.getPromotionImgs;
+        const imgLength = promotionImgs.length;
         return (
-            <div>
-                
-            </div>
+            <PromotionView images = {promotionImgs} imgLength={imgLength}
+        
+      />
         );
     }
 }
 
-export default promotionContainer;
+export default PromotionContainer;

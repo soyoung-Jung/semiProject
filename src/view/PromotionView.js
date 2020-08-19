@@ -1,84 +1,88 @@
-import React from "react";
-import {
-  Grid,
-  Image,
-  Header,
-  Button,
-  Icon,
-  Menu,
-  Sidebar
-} from "semantic-ui-react";
+import { Grid, Image, Icon } from "semantic-ui-react";
+import SlideImages from "../SlideImage";
+import React, { Component } from 'react';
 
-function PromotionView() {
-  const [visible, setVisible] = React.useState(false);
-  return (
-      <div>
-        <Grid>      
-            <Grid.Column width={1}>
-            {/* <Button
-                icon
-                size="huge"
-                onClick={() => {
-                setVisible(true);
-                }}
-            >
-            <Icon name="bars" />
-            </Button> */}
-            </Grid.Column>
-            <Grid.Column width={9}>
-                <Sidebar.Pushable as={Grid}>
-                <Sidebar
-                    as={Menu}
-                    animation="overlay"
-                    icon="labeled"
-                    inverted
-                    onHide={() => setVisible(false)}
-                    vertical
-                    visible={visible}
-                    width="thin"
-                >
-                    <Menu.Item as="a">
-                    <Icon name="home" />
-                    Home
-                    </Menu.Item>
-                    <Menu.Item as="a">
-                    <Icon name="bath" />
-                    Bathroom
-                    </Menu.Item>
-                    <Menu.Item as="a">
-                    <Icon name="camera" />
-                    Channels
-                    </Menu.Item>
-                </Sidebar>
-      
-        
+const iconStyle1 = {
+    position: 'absolute',
+    top: '36%',
+    right: '1%',
+    cursor: "pointer"
+
+}
+const iconStyle2 = {
+    position: 'absolute',
+    top: '36%',
+    left: '3%',
+    cursor: "pointer"
+
+}
+
+class PromotionView extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            imgIndex : 0
+        }
+        this.length = SlideImages.length;
+    }
+    imgChange = (symbol) =>{
+        let {imgIndex} = this.state;
+        let nextIndex;
+        if ( symbol === "plus") {
+            nextIndex = imgIndex + 1;
+
+            if (this.length === nextIndex) {
+                nextIndex = 0;
+        }
+    }   else {
+        nextIndex = imgIndex - 1;
+        if(nextIndex < 0) {
+            nextIndex = this.length - 1;
+        }
+    }   this.setState({
+        imgIndex : nextIndex
+    });
+
+    };
+    render() {
+        let { imgIndex } = this.state;
+        return (
             
-                <Sidebar.Pusher dimmed={visible}>
-                    <Image src="resrc/kkj/kelvv.jpg" />
-                </Sidebar.Pusher>
-                
-                </Sidebar.Pushable>
-            </Grid.Column>
 
-            <Grid.Column width={6} className="description">
-                <Header as="h1">Designed to your dream standards</Header>
-                <p>불 좀 꺼줄래...? 내 램 좀 보게 </p>
-                <p>불 좀 꺼줄래...? 내 램 좀 보게 </p>
-                <p>불 좀 꺼줄래...? 내 램 좀 보게 </p>
-                <p>불 좀 꺼줄래...? 내 램 좀 보게 </p>
-                <p>오늘 내 기분? 컬러로 말할게 </p>
-                <p>오늘 내 기분? 컬러로 말할게 </p>
-                <p>오늘 내 기분? 컬러로 말할게 </p>
-                <p>오늘 내 기분? 컬러로 말할게 </p>
-                <p>오늘 내 기분? 컬러로 말할게 </p>
-                <p>오늘 내 기분? 컬러로 말할게 </p>
-                <p>오늘 내 기분? 컬러로 말할게 </p>
-                <p>오늘 내 기분? 컬러로 말할게 </p>
-                <Button circular="true">Shop now</Button>
-            </Grid.Column>
-        </Grid>
-    </div>
-  );
+            <div>
+            <Grid>      
+                <Grid.Column width={1}>
+                
+                </Grid.Column>
+                
+                <Grid.Column width={14} className="slideImages">
+                    <Image src = {SlideImages[imgIndex].imgUrl}></Image>
+                    <Icon name="angle right"
+                          size="huge"
+                          className="angle-right-icon"
+                          onClick={() => this.imgChange("plus")}
+                          style={iconStyle1}>
+                    </Icon>
+                    <Icon name="angle left"
+                          size="huge"
+                          className="angle-left-icon"
+                          onClick={() => this.imgChange("minus")}
+                          style={iconStyle2}>
+                    </Icon>
+                    
+    
+                </Grid.Column>
+                
+                
+                <Grid.Column width={1}>
+                
+                </Grid.Column>
+
+            </Grid>
+        </div>
+        );
+    }
 }
 
 export default PromotionView;
+

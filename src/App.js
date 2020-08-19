@@ -38,13 +38,7 @@ class App extends Component {
             </Grid.Row>
           </>
         )}
-        {activeItem === "cart" && (
-          <>
-            <Grid.Row centered columns={1}>
-              <PromotionView />
-            </Grid.Row>
-          </>
-        )}
+        
         <Grid.Row centered columns={1}>
           <FooterView />
         </Grid.Row>

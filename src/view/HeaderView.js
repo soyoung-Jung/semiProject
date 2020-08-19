@@ -9,13 +9,15 @@ const menuStyle={
     justifyContent:'space-around',
     background: 'rgba(155, 155, 155, 0.2)',
     padding: 20,
-    
 
 }
 const inputStyle = {
     marginLeft: '50%',
     width: '20%',
 
+}
+const dropdownStyle = {
+    display: 'block',
 }
 
 
@@ -24,9 +26,10 @@ const inputStyle = {
 function HeaderView() {
     const [open, setOpen] = React.useState(false)
     const options = [
-        { key: 'edit', icon: 'edit', text: 'Edit Post', value: 'edit' },
-        { key: 'delete', icon: 'delete', text: 'Remove Post', value: 'delete' },
-        { key: 'hide', icon: 'hide', text: 'Hide Post', value: 'hide' },
+        { key: 'beds', icon: 'bed', text: 'Beds', value: 'edit' },
+        { key: 'delete', icon: 'home', text: 'Sofas', value: 'delete' },
+        { key: 'hide', icon: 'archive', text: 'Tables', value: 'hide' },
+        { key: 'hide', icon: 'coffee', text: 'Accs', value: 'hide' }
       ]
       
 
@@ -38,7 +41,9 @@ function HeaderView() {
                     <Button  color='black'>
                     <Dropdown
                     icon='bars'
+                    size='huge'
                     floating
+                    style={dropdownStyle}
                     
                     >
                     

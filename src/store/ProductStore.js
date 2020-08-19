@@ -26,11 +26,25 @@ class ProductStore {
   selectedProduct = Tables[0];
   //프로모션에서 보여질 상품 이미지 목록
   @observable
-  promotionImgs = [
-    "resrc/kkj/1.jpg",
-    "resrc/kkj/2.jpg",
-    "resrc/kkj/3.jpg"
+  promotionImgs = [{
+    id :0,
+    imgUrl : "resrc/kkj/1.jpg"
+  },
+  {
+    id :1,
+    imgUrl : "resrc/kkj/2.jpg"
+  },
+  {
+    id :2,
+    imgUrl : "resrc/kkj/3.jpg"
+  },
+  
   ];
+  @computed get getPromotionImgs(){
+  return this.promotionImgs ? this.promotionImgs.slice() : [];
+  
+  }
+
 
   @observable
   sumPrice = 0;
