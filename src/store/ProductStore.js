@@ -9,6 +9,9 @@ class ProductStore {
   @observable
   activeItem = "home";
 
+  @observable
+  selectedCategory = accs;
+
   //activeItem 전환(화면 전환)
   @action
   switchItem(item) {
