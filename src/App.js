@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Grid } from "semantic-ui-react";
-import HeaderView from "./view/HeaderView";
 import FooterView from "./view/FooterView";
 import PromotionView from "./view/PromotionView";
 import { observer, inject } from "mobx-react";
