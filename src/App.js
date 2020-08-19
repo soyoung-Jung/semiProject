@@ -18,7 +18,6 @@ class App extends Component {
     return (
       <Grid divided="vertically">
         <Grid.Row centered columns={1}>
-          <CartListContainer/>
         </Grid.Row>
         {activeItem === "home" && (
           <>

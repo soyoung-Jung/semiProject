@@ -9,6 +9,9 @@ class ProductStore {
   @observable
   activeItem = "home";
 
+  @observable
+  number= 0
+
   // 상품목록
   @observable
   products = Accs.concat(Beds);
@@ -63,6 +66,7 @@ class ProductStore {
   switchItem(item) {
     this.activeItem = item;
   }
+
   //카트에 상품 추가
 
   @action
@@ -72,6 +76,7 @@ class ProductStore {
       count: count,
       deleteCheck: false,
     });
+    console.log(this.productsInCart);
   }
 
   //상품추가

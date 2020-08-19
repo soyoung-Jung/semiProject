@@ -6,14 +6,20 @@ import ProductDetail from '../../view/ProductDetail';
 @inject('ProductStore')
 @observer
 class ProductDetailContainer extends Component {
-    onAddProductInCart=()=>{
-        
+    onAddProductInCart=(product, count)=>{
+        // let product, count = this.props.ProductStore;
+        this.props.ProductStore.addProductInCart(product, count);
+        // console.log(product);
+        // console.log(count);
     }
     render() {
         const {selectedProduct} = this.props.ProductStore;
-        console.log(selectedProduct)
+
         return (
-          <ProductDetail product={selectedProduct}/>
+          <ProductDetail 
+          product={selectedProduct}
+          onAddProductInCart={this.onAddProductInCart}
+          />
         );
     }
 }
