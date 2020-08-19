@@ -12,6 +12,10 @@ class HeaderContainer extends Component {
     this.props.ProductStore.switchItem(keyword);
     console.log(keyword);
   };
+  onSelectCategory = (text) => {
+    this.props.ProductStore.selectProduct(text);
+    this.props.ProductStore.switchItem("list");
+  };
 
   render() {
     const { loginBool } = this.props.UserStore;
@@ -21,6 +25,7 @@ class HeaderContainer extends Component {
           onSwitchItem={this.onSwitchItem}
           setLoginUser={this.setLoginUser}
           loginBool={loginBool}
+          onSelectCategory={this.onSelectCategory}
         />
       </div>
     );

@@ -25,9 +25,13 @@ const inputStyle = {
 const dropdownStyle = {
   display: "block",
 };
+<<<<<<< HEAD
+
+=======
 const iconStyle = {
   cursor: "pointer",
 };
+>>>>>>> 031c58a0f8db3766643e9e5c240816f82af81075
 function HeaderView(props) {
   const [open, setOpen] = React.useState(false);
   const options = [
@@ -38,7 +42,7 @@ function HeaderView(props) {
   ];
 
   const [loginStatus, setLoginStatus] = useState(false);
-  const { onSwitchItem, loginBool, setLoginUser } = props;
+  const { onSwitchItem, loginBool, setLoginUser, onSelectCategory } = props;
   console.log(loginStatus);
   return (
     <div>
@@ -48,7 +52,11 @@ function HeaderView(props) {
             <Dropdown icon="bars" floating style={dropdownStyle}>
               <Dropdown.Menu>
                 {options.map((option) => (
-                  <Dropdown.Item key={option.value} {...option} />
+                  <Dropdown.Item
+                    key={option.value}
+                    {...option}
+                    onClick={() => onSelectCategory(option.text)}
+                  />
                 ))}
               </Dropdown.Menu>
             </Dropdown>
@@ -121,6 +129,10 @@ function HeaderView(props) {
         {loginStatus && (
           <>
             {" "}
+<<<<<<< HEAD
+            <Icon size="huge" name="shopping basket" />{" "}
+            <Icon size="huge" name="user circle" />
+=======
             <Icon
               size="huge"
               name="shopping basket"
@@ -128,6 +140,7 @@ function HeaderView(props) {
               style={iconStyle}
             />{" "}
             <Icon size="huge" name="user circle" style={iconStyle} />
+>>>>>>> 031c58a0f8db3766643e9e5c240816f82af81075
           </>
         )}{" "}
       </Menu>
