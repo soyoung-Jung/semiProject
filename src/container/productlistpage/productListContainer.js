@@ -13,10 +13,11 @@ class productListContainer extends Component {
   };
 
   render() {
-    const { products } = this.props.ProductStore;
+    const { selectedCategory } = this.props.ProductStore;
+    console.log(selectedCategory);
     return (
       <ProductListView
-        products={products}
+        products={selectedCategory}
         onSelectProduct={this.onSelectProduct}
       />
     );
