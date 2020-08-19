@@ -8,7 +8,6 @@ class ProductListView extends Component {
       <Grid columns={4}>
         {products.map((product) => {
           return (
-            // <Grid.Row key={product.id} columns={4}>
             <Grid.Column key={product.id}>
               <Card>
                 <Image src={product.imgUrl} wrapped ui={false} />
@@ -24,14 +23,12 @@ class ProductListView extends Component {
                     {product.price}원
                   </Card.Header>
                 </Card.Content>
-
                 <Card.Content extra>
                   <Icon size="large" name="cart" />
                   <Icon size="large" name="like" />
                 </Card.Content>
               </Card>
             </Grid.Column>
-            // </Grid.Row>
           );
         })}
       </Grid>
