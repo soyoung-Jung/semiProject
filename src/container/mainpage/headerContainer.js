@@ -16,13 +16,11 @@ class HeaderContainer extends Component {
   render() {
     const { loginBool } = this.props.UserStore;
     return (
-      <div>
         <HeaderView
           onSwitchItem={this.onSwitchItem}
           setLoginUser={this.setLoginUser}
           loginBool={loginBool}
         />
-      </div>
     );
   }
 }

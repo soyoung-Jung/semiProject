@@ -27,7 +27,11 @@ const inputStyle = {
 }
 const dropdownStyle = {
     display: 'block',
+    
 }
+// const uiStyle = {
+//     fontSize: '30px',
+// }
 
 function HeaderView(props) {
     const [open, setOpen] = React.useState(false)
@@ -47,12 +51,15 @@ function HeaderView(props) {
       <Menu style={menuStyle}>
         <Button.Group>
           <Button color="black">
-            <Dropdown icon="bars" floating style={dropdownStyle}>
-              <Dropdown.Menu>
-                {options.map((option) => (
-                  <Dropdown.Item key={option.value} {...option} />
-                ))}
-              </Dropdown.Menu>
+            <Dropdown icon="bars"  floating style={dropdownStyle}>
+                
+                <Dropdown.Menu style={{height:"255px", width:"200px", fontSize: "25px"}} >
+                    {options.map((option) => (
+                        <Dropdown.Item ><Icon name={option.icon} ></Icon><span>{option.text}</span></Dropdown.Item>
+                    // <Dropdown.Item style={{fontSize:"100px !important"}} key={option.value} {...option} />
+                    ))}
+                </Dropdown.Menu>
+                
             </Dropdown>
           </Button>
         </Button.Group>
