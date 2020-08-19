@@ -4,12 +4,12 @@ import HeaderView from "./view/HeaderView";
 import FooterView from "./view/FooterView";
 import PromotionView from "./view/PromotionView";
 import { observer, inject } from "mobx-react";
-import ProductStore from "./store/ProductStore";
-import ProductDetail from "./view/ProductDetail";
+import MainProductListContainer from "./container/mainpage/MainProductListContainer";
+import CartListContainer from "./container/cartPage/CartListContainer";
 import ProductDetailContainer from "./container/productdetailpage/ProductDetailContainer";
-@observer
-@inject("ProductStore")
 
+@inject("ProductStore")
+@observer
 class App extends Component {
   render() {
     let activeItem = this.props.ProductStore.activeItem;
@@ -18,22 +18,26 @@ class App extends Component {
     return (
       <Grid divided="vertically">
         <Grid.Row centered columns={1}>
+<<<<<<< HEAD
+=======
+          {/* <CartListContainer /> */}
+          <HeaderView />
+>>>>>>> 64d908aa928abc15d5c95c6fa063f8a31bb67195
         </Grid.Row>
         {activeItem === "home" && (
           <>
             <Grid.Row centered columns={1}>
-              {/* <PromotionView />
+              <PromotionView />
             </Grid.Row>
             <Grid.Row centered columns={1}>
-              <LoginView /> */}
-              <ProductDetailContainer/>
+              <MainProductListContainer />
             </Grid.Row>
           </>
         )}
         {activeItem === "detail" && (
           <>
             <Grid.Row centered columns={1}>
-              <productDetailContainer />
+              <ProductDetailContainer />
             </Grid.Row>
           </>
         )}
@@ -42,7 +46,6 @@ class App extends Component {
             <Grid.Row centered columns={1}>
               <PromotionView />
             </Grid.Row>
-
           </>
         )}
         <Grid.Row centered columns={1}>
@@ -52,7 +55,5 @@ class App extends Component {
     );
   }
 }
-
-     
 
 export default App;
