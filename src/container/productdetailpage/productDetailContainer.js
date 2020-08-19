@@ -1,21 +1,24 @@
-import React, { Component } from 'react';
-import { observer, inject } from 'mobx-react';
-import ProductDetail from '../../view/ProductDetail';
+import React, { Component } from "react";
+import { observer, inject } from "mobx-react";
+import ProductDetail from "../../view/ProductDetail";
 
-
-@inject('ProductStore')
+@inject("ProductStore")
 @observer
 class ProductDetailContainer extends Component {
-    onAddProductInCart=()=>{
-        
-    }
-    render() {
-        const {selectedProduct} = this.props.ProductStore;
-        console.log(selectedProduct)
-        return (
-          <ProductDetail product={selectedProduct}/>
-        );
-    }
+  onAddProductInCart = (product, count) => {
+    this.props.ProductStore.addProductInCart(product, count);
+    this.props.ProductStore.switchItem("cart");
+  };
+  render() {
+    const { selectedProduct } = this.props.ProductStore;
+
+    return (
+      <ProductDetail
+        product={selectedProduct}
+        onAddProductInCart={this.onAddProductInCart}
+      />
+    );
+  }
 }
 
-export default ProductDetailContainer;  
+export default ProductDetailContainer;
