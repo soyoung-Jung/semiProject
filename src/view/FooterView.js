@@ -5,9 +5,12 @@ import { Grid, Header} from 'semantic-ui-react'
 //링크 만들지 결정
 class FooterView extends Component {
     render() {
+        const gridStyle={
+            marginLeft: '10%',
+        }
         return (
             <Grid columns={3} divided >
-                <Grid.Row>
+                <Grid.Row style={gridStyle}>
                     <Grid.Column>
                         <Header as="h4" font-weight>고객센터</Header>
                             <p>Tel: 010-9220-0628</p>

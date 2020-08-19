@@ -1,20 +1,25 @@
 import React from 'react';
 import 'semantic-ui-css/semantic.min.css';
-// import "./HeaderView.css";
-import { Button, Form, Modal, Icon, Menu, Input, Dropdown  } from "semantic-ui-react";
+import "./HeaderView.css";
+import { Button, Form, Modal, Icon, Menu, Input, Dropdown, Image  } from "semantic-ui-react";
 
 
 const menuStyle={
     display:'flex',
-    justifyContent:'center',
+    justifyContent:'space-around',
     background: 'rgba(155, 155, 155, 0.2)',
     padding: 20,
+    
+
+}
+const inputStyle = {
+    marginLeft: '50%',
+    width: '20%',
 
 }
 
-const iconStyle={
-    marginLeft: 20,
-}
+
+
 
 function HeaderView() {
     const [open, setOpen] = React.useState(false)
@@ -26,44 +31,53 @@ function HeaderView() {
       
 
     return (
-       <div >
+        <div>
             <Menu style={menuStyle}>
-                <div >
-                {/* div로묶어야 안깨짐 */}
-                <Button.Group>
-                    <Button>
-                    <Icon name="bars" />
+                
+                <Button.Group  >
+                    <Button  color='black'>
                     <Dropdown
-                    className='button icon'
+                    icon='bars'
                     floating
-                    options={options}
-                    trigger={<></>}
-                    />
+                    
+                    >
+                    
+                    <Dropdown.Menu>
+                        { options.map((option) => (
+                        <Dropdown.Item key={option.value} {...option} />
+                        ))}
+                    </Dropdown.Menu>
+                    </Dropdown>
                     </Button>
                 </Button.Group>
-                <Icon size="huge" name="bath" style={iconStyle}/>
-                <Input size='huge' icon='search' placeholder='Search...' style={iconStyle}/>
-                </div>
-                <Modal
+                
+                {/* <Icon name='angellist' size="huge" style={{iconStyle}}></Icon> */}
+                <Input  className="inputSearch" size='huge' icon='search' placeholder='Search...' style={inputStyle}/>
+                
+                <Modal 
+                    className="loginModal"
                     onClose={() => setOpen(false)}
                     onOpen={() => setOpen(true)}
                     open={open}
-                    trigger={<Button icon size='huge' style={iconStyle}><Icon name= 'user circle outline' />LOGIN</Button>}    >
+                    trigger={<Button icon size='huge' color='black' style={{float:'right'}}><Icon name= 'user circle outline' />LOGIN</Button>}    >
                     <Modal.Header>Login Page</Modal.Header>
-                    <Modal.Content form>
-                        <Form.Input
-                            icon='user'
-                            iconPosition='left'
-                            label='Username'
-                            placeholder='Username'
-                        />
-                        <Form.Input
-                            icon='lock'
-                            iconPosition='left'
-                            label='Password'
-                            type='password'
-                            placeholder='Password'
-                        />
+                    <Modal.Content form  >
+                            <Form className="formModal">
+                            <Form.Input
+                                icon='user'
+                                iconPosition='left'
+                                label='Username'
+                                placeholder='Username'
+                            />
+                            <Form.Input
+                                
+                                icon='lock'
+                                iconPosition='left'
+                                label='Password'
+                                type='password'
+                                placeholder='Password'
+                            />
+                        </Form>
                     </Modal.Content>
                     <Modal.Actions>
                     <Button color='black' onClick={() => setOpen(false)}>
@@ -79,8 +93,9 @@ function HeaderView() {
                     </Modal.Actions>
                 </Modal>
             </Menu>
-             
-       </div>
+            <Image src="resrc/kkj/IIIKEA.png" style={{height:"6rem", position:"absolute", top:"15%", left:"11%"}}></Image>
+        </div> 
+       
     )
   }
 export default HeaderView;

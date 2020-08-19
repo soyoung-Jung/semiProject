@@ -6,12 +6,12 @@ class MainProductListView extends Component {
 
     render() {
         const {products, onSelectProduct} = this.props;
-        const gridStyle={
-            marginLeft: 45,
+        const gridStyle1={
+            marginLeft: '5%',
         }
         return (
             <Grid>
-                <Grid.Row columns={4} style={gridStyle}>
+                <Grid.Row columns={4} style={gridStyle1}>
                     {products.map((product) => {
                         return(
                             <Grid.Column key={product.id}>

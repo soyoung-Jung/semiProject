@@ -24,7 +24,11 @@ class ProductStore {
   selectedProduct = {};
   //프로모션에서 보여질 상품 이미지 목록
   @observable
-  promotionImgs = [];
+  promotionImgs = [
+    "resrc/kkj/1.jpg",
+    "resrc/kkj/2.jpg",
+    "resrc/kkj/3.jpg"
+  ];
 
   //카트에 담겨진 상품목록
   @observable

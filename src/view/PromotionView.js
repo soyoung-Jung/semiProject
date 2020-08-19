@@ -74,8 +74,6 @@ function PromotionView() {
                 <p>오늘 내 기분? 컬러로 말할게 </p>
                 <p>오늘 내 기분? 컬러로 말할게 </p>
                 <p>오늘 내 기분? 컬러로 말할게 </p>
-                <p>오늘 내 기분? 컬러로 말할게 </p>
-                <p>오늘 내 기분? 컬러로 말할게 </p>
                 <Button circular="true">Shop now</Button>
             </Grid.Column>
         </Grid>
