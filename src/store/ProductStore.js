@@ -29,7 +29,11 @@ class ProductStore {
   promotionImgs = [];
 
   @observable
+<<<<<<< HEAD
   sumPrice = 0;
+=======
+  cartCount = 0;
+>>>>>>> 74ed7b37112f05720a2402a7deed17985ff58ba1
 
   //카트에 담겨진 상품목록
   @observable
@@ -72,6 +76,7 @@ class ProductStore {
   @action
   selectProduct(id) {
     this.selectedProduct = this.products.find((element) => element.id === id);
+    console.log(this.selectedProduct);
   }
 
   //activeItem 전환
