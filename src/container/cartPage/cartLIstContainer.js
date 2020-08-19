@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import CartListView from "../../view/CartListView";
 
 import { inject, observer } from "mobx-react";
-
+//10
 @inject("ProductStore")
 @observer
 class CartListContainer extends Component {
