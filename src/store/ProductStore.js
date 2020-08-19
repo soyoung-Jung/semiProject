@@ -93,6 +93,15 @@ class ProductStore {
     product.check = !product.check;
   }
 
+  //check전체 선택
+  @action
+  changeAllChecked(check) {
+    this.productsInCart = this.productsInCart.slice();
+    this.productsInCart.forEach((product) => (product.check = !check));
+    // console.log(this.productsInCart);
+    // this.productsInCart.forEach((product) => console.log(product.check))
+  }
+
   // -------- 상품목록 CRUD --------
 
   // 상품추가
