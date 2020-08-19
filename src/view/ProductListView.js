@@ -3,13 +3,13 @@ import { Grid, Card, Image, Icon, Rating } from "semantic-ui-react";
 
 class ProductListView extends Component {
   render() {
-    const { products } = this.props;
+    const { products, onSelectProduct } = this.props;
     return (
       <Grid columns={4}>
         {products.map((product) => {
           return (
             <Grid.Column key={product.id}>
-              <Card>
+              <Card onClick={() => onSelectProduct(product.id)}>
                 <Image src={product.imgUrl} wrapped ui={false} />
                 <Card.Content>
                   <Card.Header as="h1" textAlign="center">
