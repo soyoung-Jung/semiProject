@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 // import { observable, action } from "mobx";
+=======
+// import { observable, computed,action } from "mobx";
+>>>>>>> 72ccbd4052bba605cacfd990a391c665a51b1bfb
 // import accs from "../jsonData/Accs";
 // import beds from "../jsonData/Beds";
 // import sofas from "../jsonData/Sofas";
@@ -18,18 +22,48 @@
 
 //   // 상품 전체 목록
 //   @observable
+<<<<<<< HEAD
 //   selectedCategory = beds;
 
 //   @observable
 //   AccsProducts = accs;
 //   @observable
+=======
+>>>>>>> 72ccbd4052bba605cacfd990a391c665a51b1bfb
 //   products = accs.concat(beds).concat(sofas).concat(tables);
 
 //   // -------- 메인 페이지 ---------
 
 //   // 메인페이지 상품목록
 //   @observable
+<<<<<<< HEAD
 //   mainProducts = [accs[0], accs[1], beds[0], beds[1]];
+=======
+//   selectedProduct = tables[0];
+//   //프로모션에서 보여질 상품 이미지 목록
+//   @observable
+//   promotionImgs = [{
+//     id :0,
+//     imgUrl : "resrc/kkj/1.jpg"
+//   },
+//   {
+//     id :1,
+//     imgUrl : "resrc/kkj/2.jpg"
+//   },
+//   {
+//     id :2,
+//     imgUrl : "resrc/kkj/3.jpg"
+//   },
+  
+//   ];
+
+//   @computed
+//   get getPromotionImgs(){
+//   return this.promotionImgs ? this.promotionImgs.slice() : [];
+  
+//   }
+
+>>>>>>> 72ccbd4052bba605cacfd990a391c665a51b1bfb
 
 //   // 프로모션에서 보여질 상품 이미지 목록
 //   @observable
@@ -37,6 +71,7 @@
 
 //   // 선택된 상품(상품 이미지 클릭 했을때 해당 상품)
 //   @observable
+<<<<<<< HEAD
 //   productsInCart = [
 //     {
 //       product: beds[0],
@@ -53,6 +88,8 @@
 //   @observable
 //   sumPrice = 0;
 
+=======
+>>>>>>> 72ccbd4052bba605cacfd990a391c665a51b1bfb
 //   selectedProduct = tables[0];
 
 //   // 클릭한 상품 정보를 seletedProduct에 입력
@@ -114,6 +151,18 @@
 //     product.check = !product.check;
 //   }
 
+<<<<<<< HEAD
+=======
+//   //check전체 선택
+//   @action
+//   changeAllChecked(check) {
+//     this.productsInCart = this.productsInCart.slice();
+//     this.productsInCart.forEach((product) => (product.check = !check));
+//     // console.log(this.productsInCart);
+//     // this.productsInCart.forEach((product) => console.log(product.check))
+//   }
+
+>>>>>>> 72ccbd4052bba605cacfd990a391c665a51b1bfb
 //   // -------- 상품목록 CRUD --------
 
 //   // 상품추가
@@ -147,6 +196,7 @@
 //     );
 //     return this.selectedProduct;
 //   }
+<<<<<<< HEAD
 
 //   //check전체 선택
 //   @action
@@ -160,6 +210,11 @@
 
 // export default new ProductStore();
 
+=======
+// }
+
+// export default new ProductStore();
+>>>>>>> 72ccbd4052bba605cacfd990a391c665a51b1bfb
 import { observable, action } from "mobx";
 import accs from "../jsonData/Accs";
 import beds from "../jsonData/Beds";
@@ -195,9 +250,12 @@ class ProductStore {
   // 선택된 상품(상품 이미지 클릭 했을때 해당 상품)
   @observable
   selectedProduct = tables[0];
+<<<<<<< HEAD
 
   @observable
   selectedCategory = accs;
+=======
+>>>>>>> 72ccbd4052bba605cacfd990a391c665a51b1bfb
 
   // 클릭한 상품 정보를 seletedProduct에 입력
   @action

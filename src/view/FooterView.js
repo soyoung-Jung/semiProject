@@ -7,6 +7,7 @@ class FooterView extends Component {
     render() {
         const gridStyle={
             marginLeft: '10%',
+            
         }
         return (
             <Grid columns={3} divided >

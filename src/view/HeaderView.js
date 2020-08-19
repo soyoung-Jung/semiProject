@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "semantic-ui-css/semantic.min.css";
 import "./HeaderView.css";
 import {
@@ -12,32 +12,42 @@ import {
   Image,
 } from "semantic-ui-react";
 
-const menuStyle = {
-  display: "flex",
-  justifyContent: "space-around",
-  background: "rgba(155, 155, 155, 0.2)",
-  padding: 20,
-};
+
+const menuStyle={
+    display:'flex',
+    justifyContent:'space-around',
+    background: 'rgba(155, 155, 155, 0.2)',
+    padding: 20,
+
+}
 const inputStyle = {
-  marginLeft: "50%",
-  width: "20%",
-};
+    marginLeft: '50%',
+    width: '20%',
+
+}
+const dropdownStyle = {
+    display: 'block',
+}
 
 function HeaderView(props) {
-  const [open, setOpen] = React.useState(false);
-  const options = [
-    { key: "edit", icon: "edit", text: "Edit Post", value: "edit" },
-    { key: "delete", icon: "delete", text: "Remove Post", value: "delete" },
-    { key: "hide", icon: "hide", text: "Hide Post", value: "hide" },
-  ];
-  const { onSwitchItem } = props;
+    const [open, setOpen] = React.useState(false)
+    const options = [
+        { key: 'beds', icon: 'bed', text: 'Beds', value: 'edit' },
+        { key: 'delete', icon: 'home', text: 'Sofas', value: 'delete' },
+        { key: 'hide', icon: 'archive', text: 'Tables', value: 'hide' },
+        { key: 'hide', icon: 'coffee', text: 'Accs', value: 'hide' }
+      ]
+  
 
+  const [loginStatus, setLoginStatus] = useState(false);
+  const { onSwitchItem, loginBool, setLoginUser } = props;
+  console.log(loginStatus);
   return (
     <div>
       <Menu style={menuStyle}>
         <Button.Group>
           <Button color="black">
-            <Dropdown icon="bars" floating>
+            <Dropdown icon="bars" floating style={dropdownStyle}>
               <Dropdown.Menu>
                 {options.map((option) => (
                   <Dropdown.Item key={option.value} {...option} />
@@ -62,6 +72,7 @@ function HeaderView(props) {
           onOpen={() => setOpen(true)}
           open={open}
           trigger={
+              !loginStatus &&
             <Button icon size="huge" color="black" style={{ float: "right" }}>
               <Icon name="user circle outline" />
               LOGIN
@@ -76,6 +87,7 @@ function HeaderView(props) {
                 iconPosition="left"
                 label="Username"
                 placeholder="Username"
+                onChange={(e) => setLoginUser("userID", e.target.value)}
               />
               <Form.Input
                 icon="lock"
@@ -83,6 +95,7 @@ function HeaderView(props) {
                 label="Password"
                 type="password"
                 placeholder="Password"
+                onChange={(e) => setLoginUser("userPassword", e.target.value)}
               />
             </Form>
           </Modal.Content>
@@ -90,16 +103,26 @@ function HeaderView(props) {
             <Button color="black" onClick={() => setOpen(false)}>
               Sign Up
             </Button>
+            
             <Button
               content="Login"
               labelPosition="right"
               icon="checkmark"
-              onClick={() => setOpen(false)}
+              onClick={() => {
+                if (loginBool) {
+                  alert("로그인이 성공했습니다.");
+                  setLoginStatus(true);
+                  setOpen(false);
+                } else {
+                  alert("아이디나 비밀번호를 확인하세요.");
+                }
+              }}
               positive
             />
           </Modal.Actions>
         </Modal>
-      </Menu>
+    {loginStatus && <> <Icon size='huge' name="shopping basket" /> <Icon size='huge' name="user circle" />
+          </>   } </Menu>
       <Image
         src="resrc/kkj/IIIKEA.png"
         onClick={onSwitchItem}
