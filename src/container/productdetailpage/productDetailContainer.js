@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { observer, inject } from "mobx-react";
-import ProductDetailView from "../../view/ProductDetailView";
+import ProductDetail from "../../view/ProductDetail";
 
 @inject("ProductStore")
 @observer
@@ -13,7 +13,7 @@ class ProductDetailContainer extends Component {
     const { selectedProduct } = this.props.ProductStore;
 
     return (
-      <ProductDetailView
+      <ProductDetail
         product={selectedProduct}
         onAddProductInCart={this.onAddProductInCart}
       />
