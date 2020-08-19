@@ -13,7 +13,7 @@ class FooterView extends Component {
             <Grid columns={3} divided >
                 <Grid.Row style={gridStyle}>
                     <Grid.Column>
-                        <Header as="h4" font-weight>고객센터</Header>
+                        <Header as="h4">고객센터</Header>
                             <p>Tel: 010-9220-0628</p>
                             <p>서울특별시 강남구 언주로 508, SUITE 506 </p>
                             <p>Mail: kyungju620@gmail.com</p>

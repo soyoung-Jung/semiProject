@@ -6,8 +6,8 @@ import { observer, inject } from "mobx-react";
 import MainProductListContainer from "./container/mainpage/MainProductListContainer";
 import CartListContainer from "./container/cartPage/CartListContainer";
 import ProductDetailContainer from "./container/productdetailpage/ProductDetailContainer";
-import ProductListContainer from "./container/productlistpage/ProductListContainer";
 import HeaderContainer from "./container/mainpage/HeaderContainer";
+import ProductListContainer from "./container/productlistpage/ProductListContainer";
 
 @inject("ProductStore")
 @observer
@@ -19,7 +19,8 @@ class App extends Component {
     return (
       <Grid divided="vertically">
         <Grid.Row centered columns={1}>
-          {/* <CartListContainer /> */}
+          <CartListContainer />
+          <ProductListContainer />
           <HeaderContainer />
         </Grid.Row>
         {activeItem === "home" && (
