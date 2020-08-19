@@ -25,7 +25,13 @@ const inputStyle = {
 const dropdownStyle = {
   display: "block",
 };
+<<<<<<< HEAD
 
+=======
+const iconStyle = {
+  cursor: "pointer",
+};
+>>>>>>> 031c58a0f8db3766643e9e5c240816f82af81075
 function HeaderView(props) {
   const [open, setOpen] = React.useState(false);
   const options = [
@@ -123,14 +129,24 @@ function HeaderView(props) {
         {loginStatus && (
           <>
             {" "}
+<<<<<<< HEAD
             <Icon size="huge" name="shopping basket" />{" "}
             <Icon size="huge" name="user circle" />
+=======
+            <Icon
+              size="huge"
+              name="shopping basket"
+              onClick={() => onSwitchItem("cart")}
+              style={iconStyle}
+            />{" "}
+            <Icon size="huge" name="user circle" style={iconStyle} />
+>>>>>>> 031c58a0f8db3766643e9e5c240816f82af81075
           </>
         )}{" "}
       </Menu>
       <Image
-        src="resrc/kkj/IIIKEA.png"
-        onClick={onSwitchItem}
+        src="resrc/kkj/logo.png"
+        onClick={() => onSwitchItem("home")}
         style={{
           height: "6rem",
           position: "absolute",

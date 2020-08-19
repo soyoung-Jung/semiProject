@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import { observable, action } from "mobx";
 // import accs from "../jsonData/Accs";
 // import beds from "../jsonData/Beds";
@@ -160,6 +161,8 @@
 
 // export default new ProductStore();
 
+=======
+>>>>>>> 031c58a0f8db3766643e9e5c240816f82af81075
 import { observable, action } from "mobx";
 import accs from "../jsonData/Accs";
 import beds from "../jsonData/Beds";
@@ -167,9 +170,12 @@ import sofas from "../jsonData/Sofas";
 import tables from "../jsonData/Tables";
 
 class ProductStore {
-  // 화면 전환용 변수 {'home', 'detail', 'cart'}
+  // 화면 전환용 변수 {'home', 'detail', 'cart', 'list'}
   @observable
   activeItem = "home";
+
+  @observable
+  selectedCategory = accs;
 
   //activeItem 전환(화면 전환)
   @action
@@ -294,24 +300,6 @@ class ProductStore {
     this.products = this.products.filter(
       (product) => product.id !== selectedId
     );
-  }
-
-  // 상품리스트에서 선택된 상품의 아이디와 같은 상품객체 수정
-  @action
-  modifyTodo(selectedProduct) {
-    this.products = this.products.map((todo) =>
-      todo.id === selectedProduct.id ? selectedProduct : todo
-    );
-    console.log(this.products);
-  }
-
-  // 상품리스트에서 id가 같은 상품 객체 리턴
-  @action
-  selectTodo(selectedId) {
-    this.seletedProduct = this.products.find(
-      (product) => product.id === selectedId
-    );
-    return this.selectedProduct;
   }
 }
 

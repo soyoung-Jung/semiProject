@@ -8,9 +8,9 @@ class HeaderContainer extends Component {
   setLoginUser = (name, value) => {
     this.props.UserStore.setLoginUser(name, value);
   };
-  onSwitchItem = () => {
-    this.props.ProductStore.switchItem("home");
-    console.log("home");
+  onSwitchItem = (keyword) => {
+    this.props.ProductStore.switchItem(keyword);
+    console.log(keyword);
   };
   onSelectCategory = (text) => {
     this.props.ProductStore.selectProduct(text);
