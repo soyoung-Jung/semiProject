@@ -9,6 +9,7 @@ class MainProductListView extends Component {
         const gridStyle1={
             marginLeft: '5%',
         }
+        
         return (
             <Grid>
                 <Grid.Row columns={4} style={gridStyle1}>
