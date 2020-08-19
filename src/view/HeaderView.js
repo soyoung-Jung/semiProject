@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "semantic-ui-css/semantic.min.css";
 import "./HeaderView.css";
 import {
@@ -30,7 +30,8 @@ function HeaderView(props) {
     { key: "delete", icon: "delete", text: "Remove Post", value: "delete" },
     { key: "hide", icon: "hide", text: "Hide Post", value: "hide" },
   ];
-  const { onSwitchItem } = props;
+  const [loginStatus, setLoginStatus] = useState(false);
+  const { onSwitchItem, loginBool, setLoginUser } = props;
 
   return (
     <div>
@@ -76,6 +77,7 @@ function HeaderView(props) {
                 iconPosition="left"
                 label="Username"
                 placeholder="Username"
+                onChange={(e) => setLoginUser("userID", e.target.value)}
               />
               <Form.Input
                 icon="lock"
@@ -83,6 +85,7 @@ function HeaderView(props) {
                 label="Password"
                 type="password"
                 placeholder="Password"
+                onChange={(e) => setLoginUser("userPassword", e.target.value)}
               />
             </Form>
           </Modal.Content>
@@ -94,7 +97,13 @@ function HeaderView(props) {
               content="Login"
               labelPosition="right"
               icon="checkmark"
-              onClick={() => setOpen(false)}
+              onClick={() => {
+                if (loginBool) {
+                  alert("로그인이 성공했습니다.");
+                } else {
+                  alert("아이디나 비밀번호를 확인하세요.");
+                }
+              }}
               positive
             />
           </Modal.Actions>
