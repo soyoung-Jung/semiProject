@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
-import ProductDetail from '../../view/ProductDetail';
+import ProductDetailView from '../../view/ProductDetailView';
+import ModalView from '../../view/ModalView'
 
 
 @inject('ProductStore')
@@ -14,12 +15,15 @@ class ProductDetailContainer extends Component {
     }
     render() {
         const {selectedProduct} = this.props.ProductStore;
-
+        console.log(selectedProduct.imgUrl);
         return (
-          <ProductDetail 
+        <div>
+          <ProductDetailView
           product={selectedProduct}
           onAddProductInCart={this.onAddProductInCart}
           />
+          {/* <ModalView selectedProduct={selectedProduct}/> */}
+        </div>
         );
     }
 }
