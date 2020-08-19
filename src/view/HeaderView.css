@@ -1,7 +1,12 @@
+.loginModal {
+    width : 40% !important;
 
-menu {
-    margin-left: 5em;
 }
-button{
-    margin-left: 1rem !important;
+.formModal {
+    width: 40% !important;
+    margin: 0 auto;
+}
+
+.inputSearch input{
+    border-radius: 50em !important;
 }
