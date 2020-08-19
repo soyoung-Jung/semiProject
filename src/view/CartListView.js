@@ -7,12 +7,12 @@ class CartListView extends Component {
 
 
     render() {
-        const{products, price, onChangedChecked} = this.props;
+        const{products, price, onChangedChecked, onRemoveProduct} = this.props;
         return (            
         <div>
             <h1>Cart</h1>
 
-        <Button icon floated='right' basic color='red'>
+        <Button onClick={()=>onRemoveProduct()} icon floated='right' basic color='red'>
             <Icon name='trash alternate'/>
         </Button>
       <Table>
@@ -32,7 +32,7 @@ class CartListView extends Component {
                 return(
                 <Table.Row key={product.product.id}>
                     <Table.Cell>
-                        <Checkbox onChange={() => onChangedChecked()}/>
+                        <Checkbox onChange={() => onChangedChecked(product)}/>
                     </Table.Cell>
                     <Table.Cell>
                         <Image style={{'fontSize':30}} avatar src={product.product.imgUrl} />

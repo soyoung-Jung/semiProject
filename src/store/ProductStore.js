@@ -28,27 +28,44 @@ class ProductStore {
   @observable
   promotionImgs = [];
 
+  @observable
+  sumPrice = 0;
+
   //카트에 담겨진 상품목록
   @observable
   productsInCart = [
     {
       product: Beds[0],
-      count: 0,
+      count: 1,
       check: false, //체크 되었는지 여부
     },
   ];
 
+
   //카트에 담긴 상품들의 총 가격
-  @computed
-  get allProductPriceInCart() {
-    let sumPrice = 0;
+  // @computed
+  // get allProductPriceInCart() {
+  //   // this.sumPrice = 0;
+  //   this.productsInCart.forEach((productInCart) => {
+  //     if (productInCart.check) {
+  //       this.sumPrice += productInCart.product.price * productInCart.count;
+  //     }
+  //   });
+  //   console.log(this.sumPrice);
+  //   return this.sumPrice;
+  // }
+
+  @action
+  calculatePriceInCart() {
+    this.sumPrice = 0;
     this.productsInCart.forEach((productInCart) => {
       if (productInCart.check) {
-        sumPrice += productInCart.product.price * productInCart.count;
+        this.sumPrice += productInCart.product.price * productInCart.count;
       }
-    });
-
-    return sumPrice;
+      console.log(productInCart.check)
+      
+    })
+    console.log(this.sumPrice);
   }
 
   //클릭한 상품 정보를 seletedProduct에 입력
@@ -74,10 +91,9 @@ class ProductStore {
     });
   }
   //체크된 상품 카트에서 제거
-
   @action
   removeProductInCart() {
-    this.productsInCart.filter((product) => !product.check);
+    this.productsInCart = this.productsInCart.filter((element) => !element.check)
   }
   //상품추가
   @action
@@ -110,11 +126,10 @@ class ProductStore {
     );
     return this.selectedProduct;
   }
-
+//카트 속 제품 check바꾸기
   @action
-  changeChecked() {
-    this.productsInCart.check = !this.productsInCart.check;
-    console.log(this.productsInCart.check);
+  changeChecked(product) {
+    product.check = !product.check;
   }
 }
 
