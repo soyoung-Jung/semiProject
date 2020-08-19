@@ -5,12 +5,9 @@ import FooterView from "./view/FooterView";
 import PromotionView from "./view/PromotionView";
 import { observer, inject } from "mobx-react";
 import MainProductListContainer from "./container/mainpage/MainProductListContainer";
-<<<<<<< HEAD
 import CartListContainer from "./container/cartPage/CartListContainer";
-=======
-import productDetailContainer from "./container/productdetailpage/ProductDetailContainer";
 import ProductDetailContainer from "./container/productdetailpage/ProductDetailContainer";
->>>>>>> 74ed7b37112f05720a2402a7deed17985ff58ba1
+import ProductListContainer from "./container/productlistpage/ProductListContainer";
 
 @inject("ProductStore")
 @observer
@@ -23,6 +20,7 @@ class App extends Component {
       <Grid divided="vertically">
         <Grid.Row centered columns={1}>
           <CartListContainer/>
+          <ProductListContainer/>
         </Grid.Row>
         {activeItem === "home" && (
           <>

@@ -13,6 +13,9 @@ class ProductStore {
   products = Accs.concat(Beds);
 
   @observable
+  selectedCategory = Beds;
+
+  @observable
   AccsProducts = Accs;
 
   @observable
@@ -29,11 +32,7 @@ class ProductStore {
   promotionImgs = [];
 
   @observable
-<<<<<<< HEAD
-  sumPrice = 0;
-=======
   cartCount = 0;
->>>>>>> 74ed7b37112f05720a2402a7deed17985ff58ba1
 
   //카트에 담겨진 상품목록
   @observable
@@ -43,7 +42,17 @@ class ProductStore {
       count: 1,
       check: false, //체크 되었는지 여부
     },
+    {
+      product: Beds[1],
+      count: 1,
+      check: false,
+    }
   ];
+
+  @observable
+  sumPrice = 0;
+
+  
 
 
   //카트에 담긴 상품들의 총 가격
@@ -135,6 +144,15 @@ class ProductStore {
   @action
   changeChecked(product) {
     product.check = !product.check;
+  }
+
+  //check전체 선택
+  @action
+  changeAllChecked(check) {
+    this.productsInCart = this.productsInCart.slice();
+    this.productsInCart.forEach((product) => product.check = !check);
+   // console.log(this.productsInCart);
+   // this.productsInCart.forEach((product) => console.log(product.check))
   }
 }
 
