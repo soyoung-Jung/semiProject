@@ -180,14 +180,9 @@ const inputStyle = {
 const dropdownStyle = {
   display: "block",
 };
-// const uiStyle = {
-//     fontSize: '30px',
-// }
-
 const iconStyle = {
   cursor: "pointer",
 };
-
 function HeaderView(props) {
   const [open, setOpen] = React.useState(false);
   const options = [
@@ -299,12 +294,12 @@ function HeaderView(props) {
         )}{" "}
       </Menu>
       <Image
-        src="resrc/kkj/logo.png"
+        src="resrc/kkj/logolast.png"
         onClick={() => onSwitchItem("home")}
         style={{
-          height: "6rem",
+          height: "3rem",
           position: "absolute",
-          top: "15%",
+          top: "27%",
           left: "11%",
           cursor: "pointer",
         }}

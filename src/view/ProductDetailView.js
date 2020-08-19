@@ -1,20 +1,28 @@
 import React, { Component } from "react";
 import { Grid, Button, Input, Divider, Image } from "semantic-ui-react";
 import bed from "../image/bed.png";
+import ModalView from "./ModalView";
 
-class ProductDetail extends Component {
+const inputStyle = {
+  textAlign: "left",
+  lineHeight: 3,
+  width: "80%",
+  marginLeft: "40px",
+};
+
+class ProductDetailView extends Component {
   state = {
     count: this.props.count,
   };
-
   render() {
     const { product, onAddProductInCart } = this.props;
+
     return (
       <Grid textAlign="center">
         <Divider hidden />
         <Grid.Row>
           <Grid.Column width={7}>
-            <img alt="상품 이미지" src={product.imgUrl} />
+            <img alt="상품이미지" src={product.imgUrl} />
             <Image avatar src={bed} size="tiny" />
             <Image avatar src={bed} size="tiny" />
             <Image avatar src={bed} size="tiny" />
@@ -49,7 +57,8 @@ class ProductDetail extends Component {
             <Divider hidden />
             <Divider hidden />
             <div>
-              <Button primary>구매하기</Button>
+              <ModalView selectedProduct={product} />
+              {/* <Button primary>구매하기</Button> */}
               <Button
                 secondary
                 onClick={() => onAddProductInCart(product, this.state.count)}
@@ -63,7 +72,9 @@ class ProductDetail extends Component {
         <Grid.Row>
           <Grid.Column width={12}>
             <div>
-              <p>{product.detail}</p>
+              <p style={inputStyle}>
+                <strong>{product.detail}</strong>
+              </p>
             </div>
           </Grid.Column>
         </Grid.Row>
@@ -72,4 +83,4 @@ class ProductDetail extends Component {
   }
 }
 
-export default ProductDetail;
+export default ProductDetailView;

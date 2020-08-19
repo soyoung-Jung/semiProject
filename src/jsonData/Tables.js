@@ -2,7 +2,7 @@ const tables = [
   {
     id: "t1",
     name: "VANGSTA 방스타",
-    price: "129,000",
+    price: 129000,
     description: "확장형테이블, 화이트120/180x75 cm",
     detail:
       "4-6인용 식탁으로 보조상판을 이용해서 원하는 크기로 조절할 수 있습니다." +
@@ -22,7 +22,7 @@ const tables = [
   {
     id: "t2",
     name: "MICKE 미케",
-    price: "69,000",
+    price: 69000,
     description: "책상, 참나무무늬73x50 cm",
     detail:
       "뒷쪽에 전선인출구가 있어서 콘센트와 전선을 보이지 않게 정리할 수 있습니다." +
@@ -37,7 +37,7 @@ const tables = [
   {
     id: "t3",
     name: "HOL 홀",
-    price: "69,900",
+    price: 69900,
     description: "수납테이블, 아카시아나무98x50 cm",
     detail:
       "천연 원목 소재로 내구성이 뛰어납니다." +
@@ -48,7 +48,7 @@ const tables = [
   {
     id: "t4",
     name: "FJÄLLBO 피엘보",
-    price: "59,900",
+    price: 59900,
     description: "노트북책상, 블랙100x36 cm",
     detail:
       "메탈과 원목 소재의 소박한 책상으로, 좁은 공간에 잘 맞는 유연하고 기능적인 작업공간을 만들 수 있습니다." +
@@ -63,7 +63,7 @@ const tables = [
   {
     id: "t5",
     name: "MICKE 미케",
-    price: "169,000",
+    price: 169000,
     description: "워크스테이션, 참나무무늬105x50 cm",
     detail:
       "후면 패널에 통풍구가 있어 컴퓨터나 기타 장비 주변의 공기가 효율적으로 순환됩니다." +
@@ -80,7 +80,7 @@ const tables = [
   {
     id: "t6",
     name: "EKEDALEN 에케달렌",
-    price: "249,000",
+    price: 249000,
     description: "확장형테이블, 화이트120/180x80 cm",
     detail:
       "테이블을 확장하지 않을 때도 상판에 이음새가 드러나지 않는 스마트한 디자인입니다." +
@@ -101,7 +101,7 @@ const tables = [
   {
     id: "t7",
     name: "LACK 라크",
-    price: "10,000",
+    price: 10000,
     description: "보조테이블, 화이트55x55 cm",
     detail:
       "쉽게 조립할 수 있습니다." +
@@ -113,7 +113,7 @@ const tables = [
   {
     id: "t8",
     name: "TÄRENDÖ 테렌되",
-    price: "39,000",
+    price: 39000,
     description: "테이블, 블랙110x67 cm",
     detail:
       "테이블 상판은 멜라민 코팅처리가 되어 있어 열이나 흠집에 강하며, 청소도 용이합니다." +
@@ -124,7 +124,7 @@ const tables = [
   {
     id: "t9",
     name: "LINNMON 린몬 / ADILS 아딜스",
-    price: "50,000",
+    price: 50000,
     description: "테이블, 화이트120x60 cm",
     detail:
       "상판에는 일자형 다리를 쉽게 조립할 수 있도록 나사 구멍이 뚫려 있습니다." +
@@ -136,7 +136,7 @@ const tables = [
   {
     id: "t10",
     name: "MUDDUS 무두스",
-    price: "49,900",
+    price: 49900,
     description: "드롭리프테이블, 화이트48/92x60 cm",
     detail:
       "1~2인용 드롭리프 테이블로 원하는 크기로 조절할 수 있습니다." +
@@ -149,7 +149,7 @@ const tables = [
   {
     id: "t11",
     name: "NESNA 네스나",
-    price: "19,900",
+    price: 19900,
     description: "침대협탁36x35 cm",
     detail:
       "대나무는 내구성이 좋은 천연 소재입니다." +
@@ -162,7 +162,7 @@ const tables = [
   {
     id: "t12",
     name: "MICKE 미케",
-    price: "99,900",
+    price: 99900,
     description: "책상, 화이트142x50 cm",
     detail:
       "길이가 긴 테이블로 두 명이 함께 사용할 수 있습니다." +
@@ -178,7 +178,7 @@ const tables = [
   {
     id: "t13",
     name: "MICKE 미케",
-    price: "199,000",
+    price: 199000,
     description: "코너워크스테이션, 화이트100x142 cm",
     detail:
       "물건에 따라 자유롭게 선반을 조절할 수 있습니다. 선반의 높이를 조절하여 더욱 효율적으로 공간을 활용해보세요." +
@@ -194,7 +194,7 @@ const tables = [
   {
     id: "t14",
     name: "DOCKSTA 독스타",
-    price: "249,000",
+    price: 249000,
     description: "테이블, 화이트, 화이트",
     detail:
       "편안한 느낌을 주는 원형테이블입니다." +
@@ -206,7 +206,7 @@ const tables = [
   {
     id: "t15",
     name: "LINNMON 린몬 / LERBERG 레르베리",
-    price: "50,000",
+    price: 50000,
     description: "테이블, 라이트그레이/화이트, 레드120x60 cm",
     detail:
       "보드-온-프레임(Board-on-frame)은 나무나 파티클보드, 섬유판, 재활용 종이 충전재로 제작한 프레임이 있는 단단하고 가벼운 소재입니다. 자원을 보다 적게 사용할 수 있으며 운반이 간편해 환경에도 유익합니다." +
@@ -218,7 +218,7 @@ const tables = [
   {
     id: "t16",
     name: "JOKKMOKK 요크모크",
-    price: "149,000",
+    price: 149000,
     description: "테이블+의자4, 앤티크 스테인",
     detail:
       "전체 다이닝 세트를 하나로 포장하여 제공하므로 간편하게 집으로 가져갈 수 있습니다." +
@@ -236,7 +236,7 @@ const tables = [
   {
     id: "t17",
     name: "MELLTORP 멜토르프",
-    price: "69,900",
+    price: 69900,
     description: "테이블, 화이트125x75 cm",
     detail:
       "이 테이블은 철제 프레임 덕분에 매우 견고합니다." +
@@ -253,7 +253,7 @@ const tables = [
   {
     id: "t18",
     name: "MICKE 미케",
-    price: "99,900",
+    price: 99900,
     description: "책상, 화이트105x50 cm",
     detail:
       "뒷쪽에 전선인출구가 있어서 콘센트와 전선을 보이지 않게 정리할 수 있습니다." +
@@ -273,7 +273,7 @@ const tables = [
   {
     id: "t19",
     name: "LINNMON 린몬 / ALEX 알렉스",
-    price: "129,900",
+    price: 129900,
     description: "테이블, 화이트120x60 cm",
     detail:
       "상판에는 일자형 다리를 쉽게 조립할 수 있도록 나사 구멍이 뚫려 있습니다." +
@@ -287,7 +287,7 @@ const tables = [
   {
     id: "t20",
     name: "GLADOM 글라돔",
-    price: "14,900",
+    price: 14900,
     description: "트레이테이블, 화이트45x53 cm",
     detail:
       "트레이를 빼서 쟁반으로 사용할 수도 있습니다." +
