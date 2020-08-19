@@ -41,7 +41,7 @@ function HeaderView(props) {
 
   const [loginStatus, setLoginStatus] = useState(false);
   const { onSwitchItem, loginBool, setLoginUser } = props;
-
+  console.log(loginStatus);
   return (
     <div>
       <Menu style={menuStyle}>
@@ -72,6 +72,7 @@ function HeaderView(props) {
           onOpen={() => setOpen(true)}
           open={open}
           trigger={
+              !loginStatus &&
             <Button icon size="huge" color="black" style={{ float: "right" }}>
               <Icon name="user circle outline" />
               LOGIN
@@ -102,6 +103,7 @@ function HeaderView(props) {
             <Button color="black" onClick={() => setOpen(false)}>
               Sign Up
             </Button>
+            
             <Button
               content="Login"
               labelPosition="right"
@@ -109,6 +111,8 @@ function HeaderView(props) {
               onClick={() => {
                 if (loginBool) {
                   alert("로그인이 성공했습니다.");
+                  setLoginStatus(true);
+                  setOpen(false);
                 } else {
                   alert("아이디나 비밀번호를 확인하세요.");
                 }
@@ -117,9 +121,8 @@ function HeaderView(props) {
             />
           </Modal.Actions>
         </Modal>
-        <Button icon="shopping basket" />
-        <Button icon="user circle" />
-      </Menu>
+    {loginStatus && <> <Icon size='huge' name="shopping basket" /> <Icon size='huge' name="user circle" />
+          </>   } </Menu>
       <Image
         src="resrc/kkj/IIIKEA.png"
         onClick={onSwitchItem}
