@@ -49,8 +49,8 @@ state = {
                             <Input
                                 label='수량'
                                 type='number' 
-                                min='0' 
-                                placeholder='0'
+                                min='1' 
+                                placeholder='1'
                                 value={this.state.count}
                                 onChange={(e)=>this.setState({count : e.target.value})}
                             />

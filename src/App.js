@@ -7,6 +7,7 @@ import MainProductListContainer from "./container/mainpage/MainProductListContai
 import ProductDetailContainer from "./container/productdetailpage/ProductDetailContainer";
 import HeaderContainer from "./container/mainpage/HeaderContainer";
 import ProductListContainer from "./container/productlistpage/ProductListContainer";
+import CartListContainer from "./container/cartPage/CartListContainer"
 
 @inject("ProductStore")
 @observer
