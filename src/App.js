@@ -46,6 +46,13 @@ class App extends Component {
             </Grid.Row>
           </>
         )}
+        {activeItem === "list" && (
+          <>
+            <Grid.Row centered columns={1}>
+              <ProductListContainer />
+            </Grid.Row>
+          </>
+        )}
         <Grid.Row centered columns={1}>
           <FooterView />
         </Grid.Row>
