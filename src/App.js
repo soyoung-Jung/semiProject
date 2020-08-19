@@ -6,6 +6,7 @@ import { observer, inject } from "mobx-react";
 import MainProductListContainer from "./container/mainpage/MainProductListContainer";
 import CartListContainer from "./container/cartPage/CartListContainer";
 import ProductDetailContainer from "./container/productdetailpage/ProductDetailContainer";
+import ProductListContainer from "./container/productlistpage/ProductListContainer";
 import HeaderContainer from "./container/mainpage/HeaderContainer";
 
 @inject("ProductStore")
