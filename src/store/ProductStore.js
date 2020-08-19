@@ -78,7 +78,7 @@ class ProductStore {
   //카트에 담겨진 상품목록
   //{product: obj, count: int, check: bool}
   @observable
-  productsInCart = [{ product: beds[0], count: 1, check: false }];
+  productsInCart = [];
 
   // 총 가격
   @observable
