@@ -1,6 +1,8 @@
 import { observable, computed, action } from "mobx";
 import Accs from "../jsonData/Accs";
 import Beds from "../jsonData/Beds";
+import Sofas from "../jsonData/Sofas";
+import Tables from "../jsonData/Tables";
 
 class ProductStore {
   @observable
@@ -21,7 +23,7 @@ class ProductStore {
 
   //선택된 상품
   @observable
-  selectedProduct = {};
+  selectedProduct = Tables[0];
   //프로모션에서 보여질 상품 이미지 목록
   @observable
   promotionImgs = [
@@ -30,39 +32,56 @@ class ProductStore {
     "resrc/kkj/3.jpg"
   ];
 
+  @observable
+  sumPrice = 0;
+
   //카트에 담겨진 상품목록
   @observable
   productsInCart = [
     {
       product: Beds[0],
       count: 1,
-      deleteCheck: true, //체크 되었는지 여부
+      check: false, //체크 되었는지 여부
     },
   ];
 
   //카트에 담긴 상품들의 총 가격
-  @computed
-  get allProductPriceInCart() {
-    let sumPrice = 0;
+  // @computed
+  // get allProductPriceInCart() {
+  //   // this.sumPrice = 0;
+  //   this.productsInCart.forEach((productInCart) => {
+  //     if (productInCart.check) {
+  //       this.sumPrice += productInCart.product.price * productInCart.count;
+  //     }
+  //   });
+  //   console.log(this.sumPrice);
+  //   return this.sumPrice;
+  // }
+
+  @action
+  calculatePriceInCart() {
+    this.sumPrice = 0;
     this.productsInCart.forEach((productInCart) => {
       if (productInCart.check) {
-        sumPrice += productInCart.product.price * productInCart.count;
+        this.sumPrice += productInCart.product.price * productInCart.count;
       }
+      console.log(productInCart.check);
     });
-
-    return sumPrice;
+    console.log(this.sumPrice);
   }
 
   //클릭한 상품 정보를 seletedProduct에 입력
   @action
   selectProduct(id) {
     this.selectedProduct = this.products.find((element) => element.id === id);
+    console.log(this.selectedProduct);
   }
 
   //activeItem 전환
   @action
   switchItem(item) {
     this.activeItem = item;
+    console.log(this.activeItem);
   }
   //카트에 상품 추가
 
@@ -71,10 +90,16 @@ class ProductStore {
     this.productsInCart.push({
       product: product,
       count: count,
-      deleteCheck: false,
+      check: false,
     });
   }
-
+  //체크된 상품 카트에서 제거
+  @action
+  removeProductInCart() {
+    this.productsInCart = this.productsInCart.filter(
+      (element) => !element.check
+    );
+  }
   //상품추가
   @action
   addProduct(product) {
@@ -105,6 +130,11 @@ class ProductStore {
       (product) => product.id === selectedId
     );
     return this.selectedProduct;
+  }
+  //카트 속 제품 check바꾸기
+  @action
+  changeChecked(product) {
+    product.check = !product.check;
   }
 }
 
