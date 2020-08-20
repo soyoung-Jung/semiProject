@@ -13,7 +13,9 @@ class HeaderContainer extends Component {
     console.log(keyword);
   };
   onSelectCategory = (text) => {
-    this.props.ProductStore.selectProduct(text);
+    this.props.ProductStore.selectCategory(text);
+    console.log(text);
+    console.log(this.props.ProductStore.selectedCategory);
     this.props.ProductStore.switchItem("list");
   };
 
