@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Grid, Button, Input, Divider, Image } from "semantic-ui-react";
-import bed from "../image/bed.png";
 import ModalView from "./ModalView";
 
 const inputStyle = {
@@ -23,10 +22,12 @@ class ProductDetailView extends Component {
         <Grid.Row>
           <Grid.Column width={7}>
             <img alt="상품이미지" src={product.imgUrl} />
-            <Image avatar src={bed} size="tiny" />
-            <Image avatar src={bed} size="tiny" />
-            <Image avatar src={bed} size="tiny" />
-            <Image avatar src={bed} size="tiny" />
+            <div>
+              <Image avatar src={product.imgUrl} size="tiny" />
+              <Image avatar src={product.imgUrl} size="tiny" />
+              <Image avatar src={product.imgUrl} size="tiny" />
+              <Image avatar src={product.imgUrl} size="tiny" />
+            </div>
           </Grid.Column>
           <br />
           <Grid.Column width={7}>
