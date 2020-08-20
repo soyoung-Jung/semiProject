@@ -6,6 +6,10 @@ import { Button, Header, Image, Modal } from 'semantic-ui-react'
 const ModalView = (props) => {
   const [open, setOpen] = React.useState(false)
   const selectedProduct = props.selectedProduct;
+const onBuyButton=()=>{
+    alert("해당 상품이 구매되었습니다.");
+    setOpen(false);
+}
   return (
     <Modal
       onClose={() => setOpen(false)}
@@ -15,7 +19,7 @@ const ModalView = (props) => {
     >
       <Modal.Header>구매확인</Modal.Header>
       <Modal.Content image>
-        <img size='small' src={props.selectedProduct.imgUrl} wrapped />
+        <Image size="medium" src={props.selectedProduct.imgUrl} wrapped />
         <Modal.Description>
           <Header>{props.selectedProduct.name}</Header>
           <p>
@@ -25,13 +29,13 @@ const ModalView = (props) => {
       </Modal.Content>
       <Modal.Actions>
         <Button color='black' onClick={() => setOpen(false)}>
-          아니요
+          구매취소
         </Button>
         <Button
           content='구매하기'
           labelPosition='right'
           icon='checkmark'
-          onClick={() => setOpen(false)}
+          onClick={() => onBuyButton()}
           positive
         />
       </Modal.Actions>

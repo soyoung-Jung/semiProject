@@ -17,9 +17,10 @@ state = {
     render() {
         const {
             product,
-            onAddProductInCart
+            onAddProductInCart,
+            selectedProduct
         } = this.props;
-
+        
         
         return (
             <Grid textAlign='center'>
@@ -27,10 +28,12 @@ state = {
                 <Grid.Row>
                     <Grid.Column width={7}>
                         <img src={product.imgUrl}/>
-                        <Image avatar src={bed} size='tiny'/>
-                        <Image avatar src={bed} size='tiny'/>
-                        <Image avatar src={bed} size='tiny'/>
-                        <Image avatar src={bed} size='tiny'/>
+                        <div>
+                        <Image avatar src={product.imgUrl} size='tiny' />
+                        <Image avatar src={product.imgUrl} size='tiny'/>
+                        <Image avatar src={product.imgUrl} size='tiny'/>
+                        <Image avatar src={product.imgUrl} size='tiny'/>
+                        </div>
                     </Grid.Column>
                     <br />
                     <Grid.Column width={7}>
