@@ -3,12 +3,12 @@ import { Button, Header, Modal } from "semantic-ui-react";
 //import { render } from '@testing-library/react'
 
 const ModalView = (props) => {
-  const [open, setOpen] = React.useState(false)
-  const selectedProduct = props.selectedProduct;
-const onBuyButton=()=>{
+  const [open, setOpen] = React.useState(false);
+
+  const onBuyButton = () => {
     alert("해당 상품이 구매되었습니다.");
     setOpen(false);
-}
+  };
   return (
     <Modal
       onClose={() => setOpen(false)}
@@ -30,13 +30,13 @@ const onBuyButton=()=>{
         </Modal.Description>
       </Modal.Content>
       <Modal.Actions>
-        <Button color='black' onClick={() => setOpen(false)}>
+        <Button color="black" onClick={() => setOpen(false)}>
           구매취소
         </Button>
         <Button
-          content='구매하기'
-          labelPosition='right'
-          icon='checkmark'
+          content="구매하기"
+          labelPosition="right"
+          icon="checkmark"
           onClick={() => onBuyButton()}
           positive
         />
