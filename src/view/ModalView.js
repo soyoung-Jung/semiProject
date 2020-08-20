@@ -26,7 +26,7 @@ const onBuyButton=()=>{
         />
         <Modal.Description>
           <Header>{props.selectedProduct.name}</Header>
-          <p>해당 상품을 구매하시겠습니다?</p>
+          <p>해당 상품을 구매하시겠습니까?</p>
         </Modal.Description>
       </Modal.Content>
       <Modal.Actions>
